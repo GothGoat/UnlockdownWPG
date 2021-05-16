@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CardLogic : MonoBehaviour
 {
+    public Card card;
     public bool isMouseOver = false;
     private void OnMouseOver()
     {
@@ -14,4 +15,12 @@ public class CardLogic : MonoBehaviour
     {
         isMouseOver = false;
     }
+
+}
+
+public enum CardSprite
+{
+    ONE,
+    TWO,
+    THREE,
 }
