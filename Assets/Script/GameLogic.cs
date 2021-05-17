@@ -35,11 +35,41 @@ public class GameLogic : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //Check Side
+        if (card.transform.position.x < -fsidetrigger)
+        {
+            if (Input.GetMouseButtonUp(0))
+            {
+                currentCard.Left();
+            }
+        }
+        else if (card.transform.position.x > fsidetrigger)
+        {
+            if (Input.GetMouseButtonUp(0))
+            {
+                currentCard.Right();
+            }
+        }
+
+        if (card.transform.position.x > fsidemargin)    //Kanan
+        {
+            dialogue.text = rightdialogue;
+            dialogue.alpha = Mathf.Min(card.transform.position.x, 1);
+        }
+        else if (card.transform.position.x < -fsidemargin)   //Kiri
+        {
+            dialogue.text = leftdialogue;
+            dialogue.alpha = Mathf.Min(-card.transform.position.x, 1);
+        }
+        else
+        {
+            dialogue.alpha = Mathf.Min(card.transform.position.x, 0);
+        }
+
         //Moving
-        if(Input.GetMouseButton(0) && cl.isMouseOver)
+        if (Input.GetMouseButton(0) && cl.isMouseOver)
         {
             Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             pos.y = 0f;
@@ -48,21 +78,6 @@ public class GameLogic : MonoBehaviour
         else
         {
             card.transform.position = Vector2.MoveTowards(transform.position, new Vector2(0, 0), fMovingSpeed);
-        }
-        
-
-        //Check Side
-        if(card.transform.position.x > fsidemargin)    //Kanan
-        {
-            dialogue.alpha = Mathf.Min(card.transform.position.x, 1);
-        }
-        else if(card.transform.position.x < -fsidemargin)   //Kiri
-        {
-            dialogue.alpha = Mathf.Min(-card.transform.position.x, 1);
-        }
-        else
-        {
-            dialogue.alpha = Mathf.Min(card.transform.position.x, 1);
         }
     }
 

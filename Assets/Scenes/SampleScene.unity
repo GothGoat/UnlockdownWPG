@@ -554,12 +554,12 @@ MonoBehaviour:
   cl: {fileID: 446451710}
   fMovingSpeed: 3
   fsidemargin: 0.5
-  fsidetrigger: 2
-  display: {fileID: 0}
+  fsidetrigger: 1.5
+  display: {fileID: 1475881583}
   charName: {fileID: 0}
   dialogue: {fileID: 718461615}
   currentCard: {fileID: 0}
-  testCard: {fileID: 11400000, guid: 5939bd4a88e458b4b89d8031db22bf1f, type: 2}
+  testCard: {fileID: 11400000, guid: 1f50bd656ff5eac4eb23724a1906afe5, type: 2}
 --- !u!4 &778019834
 Transform:
   m_ObjectHideFlags: 0
