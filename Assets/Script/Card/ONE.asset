@@ -15,5 +15,6 @@ MonoBehaviour:
   CardID: 0
   CardName: ONE
   sprite: 0
+  cardDialogue: Card Dialogue 1
   leftDialogue: You swipe Left
   RightDialogue: You Swipe Rifht

@@ -9,6 +9,7 @@ public class GameLogic : MonoBehaviour
     public GameObject card;
     public SpriteRenderer CardSpriteRenderer;
     public ResourceManager resourceManager;
+    public ResourceManager[] cards;
     public CardLogic cl;
     SpriteRenderer sr;
 
@@ -19,7 +20,7 @@ public class GameLogic : MonoBehaviour
 
     // UI
     public TMP_Text display;
-    public TMP_Text charName;
+    public TMP_Text carddialoguetext;
     public TMP_Text dialogue;
 
     // Card Variables
@@ -27,9 +28,12 @@ public class GameLogic : MonoBehaviour
     private string rightdialogue;
     public Card currentCard;
     public Card testCard;
+    private string cardDialogue;
+    private int deck_length;
 
     void Start()
     {
+        deck_length = resourceManager.cards.Length - 1;
         sr = card.GetComponent<SpriteRenderer>();
         LoadCard(testCard);
 
@@ -43,6 +47,7 @@ public class GameLogic : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 currentCard.Left();
+                NewCard();
             }
         }
         else if (card.transform.position.x > fsidetrigger)
@@ -50,6 +55,7 @@ public class GameLogic : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 currentCard.Right();
+                NewCard();
             }
         }
 
@@ -83,9 +89,31 @@ public class GameLogic : MonoBehaviour
 
     public void LoadCard(Card card)
     {
-        CardSpriteRenderer.sprite = resourceManager.sprites[(int)card.sprite];
-        leftdialogue = card.leftDialogue;
-        rightdialogue = card.RightDialogue;
-        currentCard = card;
+        if (deck_length == 0)
+        {
+            Debug.Log("Out of Card");
+        }
+        else
+        {
+            CardSpriteRenderer.sprite = resourceManager.sprites[(int)card.sprite];
+            leftdialogue = card.leftDialogue;
+            rightdialogue = card.RightDialogue;
+            carddialoguetext.text = card.cardDialogue;
+            currentCard = card;
+        }
+    }
+
+    public void NewCard()
+    {
+        int acak = Random.Range(0, deck_length);
+        int nilai_acak = acak;
+        LoadCard(resourceManager.cards[nilai_acak]);
+        
+        // Hapus kartu yang sudah muncul
+        for (int i = nilai_acak; i < deck_length - 1; i++)
+        {
+            resourceManager.cards[i] = resourceManager.cards[i + 1];
+        }
+        deck_length--;
     }
 }

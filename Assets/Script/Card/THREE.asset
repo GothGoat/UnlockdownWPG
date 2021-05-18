@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: feba115ee37b4464fb167d0de6bb8724, type: 3}
-  m_Name: TWO
+  m_Name: THREE
   m_EditorClassIdentifier: 
-  CardID: 1
-  CardName: TWO
-  sprite: 1
-  cardDialogue: Card Dialogue 2
-  leftDialogue: Left You Swipe
-  RightDialogue: Right You Swipe
+  CardID: 2
+  CardName: THREE
+  sprite: 2
+  cardDialogue: Card Dialogue 3
+  leftDialogue: Left
+  RightDialogue: Right
