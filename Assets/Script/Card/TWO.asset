@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardID: 1
   CardName: TWO
-  sprite: {fileID: 0}
+  sprite: 1
   cardDialogue: Card Dialogue 2
   leftDialogue: Left You Swipe
   RightDialogue: Right You Swipe

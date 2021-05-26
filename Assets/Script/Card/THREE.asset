@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: THREE
   m_EditorClassIdentifier: 
   CardID: 2
-  CardName: Skenario_masker
-  sprite: {fileID: 0}
+  CardName: THREE
+  sprite: 2
   cardDialogue: Card Dialogue 3
   leftDialogue: Left
   RightDialogue: Right
