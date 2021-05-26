@@ -17,10 +17,3 @@ public class CardLogic : MonoBehaviour
     }
 
 }
-
-public enum CardSprite
-{
-    ONE,
-    TWO,
-    THREE,
-}

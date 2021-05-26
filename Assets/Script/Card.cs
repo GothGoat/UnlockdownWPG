@@ -6,17 +6,16 @@ public class Card : ScriptableObject
 {
     public int CardID;
     public string CardName;
-    public CardSprite sprite;
+    public Sprite sprite;
     public string cardDialogue;
     public string leftDialogue;
     public string RightDialogue;
-    public void Left()
-    {
-        Debug.Log(CardName + " swipe left");
-    }
-
-    public void Right()
-    {
-        Debug.Log(CardName + " swipe right");
-    }
+    
+    // Parameter
+    public float mental_left;
+    public float health_left;
+    public float money_left;
+    public float mental_right;
+    public float health_right;
+    public float money_right;
 }

@@ -14,7 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardID: 2
   CardName: THREE
-  sprite: 2
+  sprite: {fileID: 21300000, guid: ffbd6ef5a6fd9c84bbd1b0d4a63fe894, type: 3}
   cardDialogue: Card Dialogue 3
   leftDialogue: Left
   RightDialogue: Right
+  mental_left: -5
+  health_left: 0
+  money_left: 0
+  mental_right: 10
+  health_right: 0
+  money_right: -5
