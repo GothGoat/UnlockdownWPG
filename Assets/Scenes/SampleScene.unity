@@ -1152,6 +1152,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &907148663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1484,6 +1485,8 @@ CanvasRenderer:
 >>>>>>> parent of 28b61ef (Tambah Background)
 =======
 >>>>>>> parent of 28b61ef (Tambah Background)
+=======
+>>>>>>> parent of 28b61ef (Tambah Background)
 --- !u!1 &1627938948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,7 +1555,11 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1744818205
+=======
+--- !u!1 &1878679379
+>>>>>>> parent of 28b61ef (Tambah Background)
 =======
 --- !u!1 &1878679379
 >>>>>>> parent of 28b61ef (Tambah Background)
@@ -1568,6 +1575,7 @@ GameObject:
   m_Component:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: 1744818206}
   - component: {fileID: 1744818208}
   - component: {fileID: 1744818207}
@@ -1576,11 +1584,16 @@ GameObject:
 =======
 =======
 >>>>>>> parent of 28b61ef (Tambah Background)
+=======
+>>>>>>> parent of 28b61ef (Tambah Background)
   - component: {fileID: 1878679380}
   - component: {fileID: 1878679381}
   m_Layer: 0
   m_Name: New Sprite
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 28b61ef (Tambah Background)
+=======
 >>>>>>> parent of 28b61ef (Tambah Background)
 =======
 >>>>>>> parent of 28b61ef (Tambah Background)
@@ -1589,6 +1602,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!224 &1744818206
@@ -1601,10 +1615,15 @@ Transform:
 --- !u!4 &1878679380
 Transform:
 >>>>>>> parent of 28b61ef (Tambah Background)
+=======
+--- !u!4 &1878679380
+Transform:
+>>>>>>> parent of 28b61ef (Tambah Background)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1744818205}
@@ -1625,6 +1644,8 @@ MonoBehaviour:
 =======
 =======
 >>>>>>> parent of 28b61ef (Tambah Background)
+=======
+>>>>>>> parent of 28b61ef (Tambah Background)
   m_GameObject: {fileID: 1878679379}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1635,6 +1656,7 @@ MonoBehaviour:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1878679381
 SpriteRenderer:
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> parent of 28b61ef (Tambah Background)
   m_ObjectHideFlags: 0
@@ -1743,14 +1765,19 @@ MonoBehaviour:
 CanvasRenderer:
 =======
 >>>>>>> parent of 28b61ef (Tambah Background)
+=======
+>>>>>>> parent of 28b61ef (Tambah Background)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 2135012046}
   m_CullTransparentMesh: 0
 =======
+=======
+>>>>>>> parent of 28b61ef (Tambah Background)
 =======
 >>>>>>> parent of 28b61ef (Tambah Background)
   m_GameObject: {fileID: 1878679379}
@@ -1798,6 +1825,9 @@ CanvasRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 28b61ef (Tambah Background)
+=======
 >>>>>>> parent of 28b61ef (Tambah Background)
 =======
 >>>>>>> parent of 28b61ef (Tambah Background)
