@@ -27,7 +27,6 @@ public class GameLogic : MonoBehaviour
     private string leftdialogue;
     private string rightdialogue;
     public Card currentCard;
-    public Card testCard;
     private string cardDialogue;
     private int deck_length;
 
@@ -35,8 +34,6 @@ public class GameLogic : MonoBehaviour
     {
         deck_length = resourceManager.cards.Length - 1;
         sr = card.GetComponent<SpriteRenderer>();
-        LoadCard(testCard);
-
     }
 
     void Update()
@@ -95,11 +92,12 @@ public class GameLogic : MonoBehaviour
         }
         else
         {
-            CardSpriteRenderer.sprite = resourceManager.sprites[(int)card.sprite];
+            CardSpriteRenderer.sprite = card.sprite;
             leftdialogue = card.leftDialogue;
             rightdialogue = card.RightDialogue;
             carddialoguetext.text = card.cardDialogue;
             currentCard = card;
+            
         }
     }
 
