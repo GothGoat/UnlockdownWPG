@@ -22,6 +22,7 @@ public class GameLogic : MonoBehaviour
     // UI
     public TMP_Text carddialoguetext;
     public TMP_Text dialogue;
+    public Image dialogue_box;
     public Image Health;
     public Image Mental;
     public Image Money;
@@ -50,6 +51,7 @@ public class GameLogic : MonoBehaviour
         {
             dialogue.text = leftdialogue;
             dialogue.alpha = Mathf.Min(-card.transform.position.x, 1);
+            dialogue_box.CrossFadeAlpha(1, 0.1f, true);
             if (Input.GetMouseButtonUp(0))
             {
                 NewCard();
@@ -63,6 +65,7 @@ public class GameLogic : MonoBehaviour
         {
             dialogue.text = rightdialogue;
             dialogue.alpha = Mathf.Min(card.transform.position.x, 1);
+            dialogue_box.CrossFadeAlpha(1, 0.1f, true);
             if (Input.GetMouseButtonUp(0))
             {
                 NewCard();
@@ -75,6 +78,7 @@ public class GameLogic : MonoBehaviour
         else
         {
             dialogue.alpha = Mathf.Min(card.transform.position.x, 0);
+            dialogue_box.CrossFadeAlpha(0, 0.1f, true);
         }
 
         //Moving
