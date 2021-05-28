@@ -23,10 +23,10 @@ public class GameLogic : MonoBehaviour
     public TMP_Text carddialoguetext;
     public TMP_Text dialogue;
     public Image dialogue_box;
-    public Image Health;
-    public Image Mental;
-    public Image Money;
     public Text Month;
+    public float Health;
+    public float Mental;
+    public float Money;
 
     // Card Variables
     private string leftdialogue;
@@ -38,8 +38,10 @@ public class GameLogic : MonoBehaviour
 
     void Start()
     {
+        Health = 1.0f;
+        Mental = 1.0f;
+        Money = 1.0f;
         deck_length = resourceManager.cards.Length - 1;
-        sr = card.GetComponent<SpriteRenderer>();
         NewCard();
         Month.text = "0 M";
     }
@@ -55,9 +57,10 @@ public class GameLogic : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 NewCard();
-                Health.fillAmount += 1.0f / currentCard.health_left;
-                Mental.fillAmount += 1.0f / currentCard.mental_left;
-                Money.fillAmount += 1.0f / currentCard.money_left;
+                Health += 1.0f / currentCard.health_left;
+                Mental += 1.0f / currentCard.mental_left;
+                Money += 1.0f / currentCard.money_left;
+                MaxMin();
                 Month.text = month_count++ + " M";
             }
         }
@@ -69,10 +72,11 @@ public class GameLogic : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 NewCard();
-                Health.fillAmount += 1.0f / currentCard.health_right;
-                Mental.fillAmount += 1.0f / currentCard.mental_right;
-                Money.fillAmount += 1.0f / currentCard.money_right;
+                Health += 1.0f / currentCard.health_right;
+                Mental += 1.0f / currentCard.mental_right;
+                Money += 1.0f / currentCard.money_right;
                 Month.text = month_count++ + " M";
+                MaxMin();
             }
         }
         else
@@ -122,5 +126,38 @@ public class GameLogic : MonoBehaviour
             resourceManager.cards[i] = resourceManager.cards[i + 1];
         }
         deck_length--;
+    }
+
+    public void MaxMin()
+    {
+        // Health
+        if (Health >= 1.0f)
+        {
+            Health = 1.0f;
+        }
+        else if (Health <= 0f)
+        {
+            Health = 0f;
+        }
+
+        // Mental
+        if (Mental >= 1.0f)
+        {
+            Mental = 1.0f;
+        }
+        else if (Mental <= 0f)
+        {
+            Mental = 0f;
+        }
+
+        // Money
+        if (Money >= 1.0f)
+        {
+            Money = 1.0f;
+        }
+        else if (Money <= 0f)
+        {
+            Money = 0f;
+        }
     }
 }
