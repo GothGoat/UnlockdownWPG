@@ -10,9 +10,7 @@ public class GameLogic : MonoBehaviour
     public GameObject card;
     public SpriteRenderer CardSpriteRenderer;
     public ResourceManager resourceManager;
-    public ResourceManager[] cards;
     public CardLogic cl;
-    SpriteRenderer sr;
 
     // Card Movement
     public float fMovingSpeed = 3f;
@@ -24,9 +22,6 @@ public class GameLogic : MonoBehaviour
     public TMP_Text dialogue;
     public Image dialogue_box;
     public Text Month;
-    public float Health;
-    public float Mental;
-    public float Money;
 
     // Card Variables
     private string leftdialogue;
@@ -36,11 +31,23 @@ public class GameLogic : MonoBehaviour
     private int deck_length;
     private int month_count = 1;
 
+    // Card flip
+    public Vector3 cardRotation;
+    public Vector3 Currentrotation;
+    public Vector3 Initialrotation;
+    public bool isFliping = false;
+    public float fRotatingSpeed;
+    public Sprite cardBack;
+
+    // Parameter
+    public static int Money;
+    public static int Health;
+    public static int Mental;
+    public static int maxValue = 100;
+    public static int minValue = 0;
+
     void Start()
     {
-        Health = 1.0f;
-        Mental = 1.0f;
-        Money = 1.0f;
         deck_length = resourceManager.cards.Length - 1;
         NewCard();
         Month.text = "0 M";
@@ -57,10 +64,10 @@ public class GameLogic : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 NewCard();
-                Health += 1.0f / currentCard.health_left;
-                Mental += 1.0f / currentCard.mental_left;
-                Money += 1.0f / currentCard.money_left;
-                MaxMin();
+                Health.fillAmount += 1.0f / currentCard.health_left;
+                Mental.fillAmount += 1.0f / currentCard.mental_left;
+                Money.fillAmount += 1.0f / currentCard.money_left;
+                
                 Month.text = month_count++ + " M";
             }
         }
@@ -72,11 +79,9 @@ public class GameLogic : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 NewCard();
-                Health += 1.0f / currentCard.health_right;
-                Mental += 1.0f / currentCard.mental_right;
-                Money += 1.0f / currentCard.money_right;
+                Card.Right();
                 Month.text = month_count++ + " M";
-                MaxMin();
+                
             }
         }
         else
@@ -92,13 +97,32 @@ public class GameLogic : MonoBehaviour
             pos.y = 0f;
             card.transform.position = pos;
         }
-        else
+        else if (!isFliping)
         {
             card.transform.position = Vector2.MoveTowards(transform.position, new Vector2(0, 0), fMovingSpeed);
+            card.transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        else if (isFliping)
+        {
+            card.transform.eulerAngles = Vector3.MoveTowards(card.transform.eulerAngles, cardRotation, fRotatingSpeed);
+            if(card.transform.eulerAngles.y >= 90)
+            {
+                CardSpriteRenderer.sprite = cardBack;
+            }
+            else
+            {
+                CardSpriteRenderer.sprite = currentCard.sprite;
+            }
+        }
+
+        // Rotating card
+        if(card.transform.eulerAngles == cardRotation)
+        {
+            isFliping = false;
         }
     }
 
-    public void LoadCard(Card card)
+    public void LoadCard(Card ncard)
     {
         if (deck_length == 0)
         {
@@ -106,11 +130,18 @@ public class GameLogic : MonoBehaviour
         }
         else
         {
-            CardSpriteRenderer.sprite = card.sprite;
-            leftdialogue = card.leftDialogue;
-            rightdialogue = card.RightDialogue;
-            carddialoguetext.text = card.cardDialogue;
-            currentCard = card;
+            currentCard = ncard;
+            CardSpriteRenderer.sprite = ncard.sprite;
+            leftdialogue = ncard.leftDialogue;
+            rightdialogue = ncard.RightDialogue;
+            carddialoguetext.text = ncard.cardDialogue;
+
+            // Reset card position
+            card.transform.position = new Vector2(0, 0);
+            card.transform.eulerAngles = new Vector3(0, 0, 0);
+            
+            isFliping = true;
+            card.transform.eulerAngles = Initialrotation;
         }
     }
 
@@ -126,38 +157,5 @@ public class GameLogic : MonoBehaviour
             resourceManager.cards[i] = resourceManager.cards[i + 1];
         }
         deck_length--;
-    }
-
-    public void MaxMin()
-    {
-        // Health
-        if (Health >= 1.0f)
-        {
-            Health = 1.0f;
-        }
-        else if (Health <= 0f)
-        {
-            Health = 0f;
-        }
-
-        // Mental
-        if (Mental >= 1.0f)
-        {
-            Mental = 1.0f;
-        }
-        else if (Mental <= 0f)
-        {
-            Mental = 0f;
-        }
-
-        // Money
-        if (Money >= 1.0f)
-        {
-            Money = 1.0f;
-        }
-        else if (Money <= 0f)
-        {
-            Money = 0f;
-        }
     }
 }
