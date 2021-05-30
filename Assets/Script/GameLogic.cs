@@ -40,11 +40,11 @@ public class GameLogic : MonoBehaviour
     public Sprite cardBack;
 
     // Parameter
-    public static int Money;
-    public static int Health;
-    public static int Mental;
-    public static int maxValue = 100;
-    public static int minValue = 0;
+    public float Money = 1f;
+    public float Health = 1f;
+    public float Mental = 1f;
+    public float maxValue = 100;
+    public float minValue = 0;
 
     void Start()
     {
@@ -64,10 +64,9 @@ public class GameLogic : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 NewCard();
-                Health.fillAmount += 1.0f / currentCard.health_left;
-                Mental.fillAmount += 1.0f / currentCard.mental_left;
-                Money.fillAmount += 1.0f / currentCard.money_left;
-                
+                Money += currentCard.money_left / maxValue;
+                Health += currentCard.health_left / maxValue;
+                Mental += currentCard.mental_left / maxValue;
                 Month.text = month_count++ + " M";
             }
         }
@@ -79,9 +78,14 @@ public class GameLogic : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 NewCard();
-                Card.Right();
+                Money += currentCard.money_right / maxValue;
+                Health += currentCard.health_right / maxValue;
+                Mental += currentCard.mental_right / maxValue;
                 Month.text = month_count++ + " M";
-                
+
+                Debug.Log("Money = " + currentCard.money_right / maxValue);
+                Debug.Log("Health = " + currentCard.health_right / maxValue);
+                Debug.Log("Mental = " + currentCard.mental_right / maxValue);
             }
         }
         else
@@ -120,6 +124,8 @@ public class GameLogic : MonoBehaviour
         {
             isFliping = false;
         }
+
+        // Keep Health max and Min
     }
 
     public void LoadCard(Card ncard)
