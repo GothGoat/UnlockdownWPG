@@ -990,10 +990,7 @@ MonoBehaviour:
   isFliping: 0
   fRotatingSpeed: 3
   cardBack: {fileID: 21300000, guid: 31f100acd3a79d74f9d15570f5c4c676, type: 3}
-  Money: 1
-  Health: 1
-  Mental: 1
-  maxValue: 100
+  maxValue: 1
   minValue: 0
 --- !u!4 &778019834
 Transform:
@@ -1046,8 +1043,8 @@ MonoBehaviour:
   Money_dot: {fileID: 493133838}
   Mental_dot: {fileID: 1623120384}
   Health_dot: {fileID: 112619487}
-  big: 10
-  small: 5
+  big: 0
+  small: 0
   speed: 0.005
 --- !u!1 &814414743
 GameObject:

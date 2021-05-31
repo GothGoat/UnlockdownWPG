@@ -40,11 +40,11 @@ public class GameLogic : MonoBehaviour
     public Sprite cardBack;
 
     // Parameter
-    public float Money = 1f;
-    public float Health = 1f;
-    public float Mental = 1f;
-    public float maxValue = 100;
-    public float minValue = 0;
+    public static float Money = 1f;
+    public static float Health = 1f;
+    public static float Mental = 1f;
+    public float maxValue = 1f;
+    public float minValue = 0f;
 
     void Start()
     {
@@ -63,10 +63,8 @@ public class GameLogic : MonoBehaviour
             dialogue_box.CrossFadeAlpha(1, 0.1f, true);
             if (Input.GetMouseButtonUp(0))
             {
+                currentCard.Left(); 
                 NewCard();
-                Money += currentCard.money_left / maxValue;
-                Health += currentCard.health_left / maxValue;
-                Mental += currentCard.mental_left / maxValue;
                 Month.text = month_count++ + " M";
             }
         }
@@ -77,15 +75,9 @@ public class GameLogic : MonoBehaviour
             dialogue_box.CrossFadeAlpha(1, 0.1f, true);
             if (Input.GetMouseButtonUp(0))
             {
+                currentCard.Right();
                 NewCard();
-                Money += currentCard.money_right / maxValue;
-                Health += currentCard.health_right / maxValue;
-                Mental += currentCard.mental_right / maxValue;
                 Month.text = month_count++ + " M";
-
-                Debug.Log("Money = " + currentCard.money_right / maxValue);
-                Debug.Log("Health = " + currentCard.health_right / maxValue);
-                Debug.Log("Mental = " + currentCard.mental_right / maxValue);
             }
         }
         else
@@ -125,7 +117,25 @@ public class GameLogic : MonoBehaviour
             isFliping = false;
         }
 
-        // Keep Health max and Min
+        // Keep Parameter Max and Min
+        if (Health > maxValue)
+            Health = 1f;
+        else if (Health < minValue)
+            Health = 0f;
+
+        if (Mental > maxValue)
+            Mental = 1f;
+        else if (Mental < minValue)
+            Mental = 0f;
+
+        if (Money > maxValue)
+            Money = 1f;
+        else if (Money < minValue)
+            Money = 0f;
+
+        Debug.Log("MONEY = " + Money);
+        Debug.Log("HEALTH = " + Health);
+        Debug.Log("MENTAL = " + Mental);
     }
 
     public void LoadCard(Card ncard)
@@ -141,7 +151,7 @@ public class GameLogic : MonoBehaviour
             leftdialogue = ncard.leftDialogue;
             rightdialogue = ncard.RightDialogue;
             carddialoguetext.text = ncard.cardDialogue;
-
+            
             // Reset card position
             card.transform.position = new Vector2(0, 0);
             card.transform.eulerAngles = new Vector3(0, 0, 0);

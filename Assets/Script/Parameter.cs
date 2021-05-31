@@ -20,7 +20,7 @@ public class Parameter : MonoBehaviour
     public int big;
     public int small;
 
-    public float speed = 0.005f;
+    public float speed = 0.001f;
 
     void Awake()
     {
@@ -30,51 +30,51 @@ public class Parameter : MonoBehaviour
     {
         big = 10;
         small = 5;
-        Money_fill.fillAmount = 1;
-        Mental_fill.fillAmount = 1;
-        Health_fill.fillAmount = 1;
+        Money_fill.fillAmount = 0;
+        Mental_fill.fillAmount = 0;
+        Health_fill.fillAmount = 0;
     }
     void Update()
     {
         // FILL
         // Fill Money
-        if (Money_fill.fillAmount > GL.Money)
+        if (Money_fill.fillAmount > GameLogic.Money)
         {
             Money_fill.fillAmount -= speed;
         }
-        else if (Money_fill.fillAmount < GL.Money)
+        else if (Money_fill.fillAmount < GameLogic.Money)
         {
             Money_fill.fillAmount += speed;
         }
-        else
+        else if (Money_fill.fillAmount == GameLogic.Money)
         {
-            Money_fill.fillAmount = GL.Money;
+            Money_fill.fillAmount += 0f;
         }
         // Fill Mental
-        if (Mental_fill.fillAmount > GL.Mental)
+        if (Mental_fill.fillAmount > GameLogic.Mental)
         {
             Mental_fill.fillAmount -= speed;
         }
-        else if (Mental_fill.fillAmount < GL.Mental)
+        else if (Mental_fill.fillAmount < GameLogic.Mental)
         {
             Mental_fill.fillAmount += speed;
         }
         else
         {
-            Mental_fill.fillAmount = GL.Mental;
+            Mental_fill.fillAmount = GameLogic.Mental;
         }
         // Fill Health
-        if (Health_fill.fillAmount > GL.Health)
+        if (Health_fill.fillAmount > GameLogic.Health)
         {
             Health_fill.fillAmount -= speed;
         }
-        else if (Health_fill.fillAmount < GL.Health)
+        else if (Health_fill.fillAmount < GameLogic.Health)
         {
             Health_fill.fillAmount += speed;
         }
         else
         {
-            Health_fill.fillAmount = GL.Health;
+            Health_fill.fillAmount = GameLogic.Health;
         }
 
         // DOT

@@ -23,4 +23,4 @@ MonoBehaviour:
   money_left: 0
   mental_right: 0
   health_right: 0
-  money_right: -5
+  money_right: -10
