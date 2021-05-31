@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feba115ee37b4464fb167d0de6bb8724, type: 3}
+  m_Name: kartu_pak tua
+  m_EditorClassIdentifier: 
+  CardID: 0
+  CardName: Pak Tua
+  sprite: {fileID: 21300000, guid: 9e12924ef228a73409fa3fff4ae11f23, type: 3}
+  cardDialogue: Pak Tua
+  leftDialogue: PT Kiri
+  RightDialogue: PT Kanan
+  mental_left: -10
+  health_left: 0
+  money_left: 0
+  mental_right: 5
+  health_right: 0
+  money_right: -5

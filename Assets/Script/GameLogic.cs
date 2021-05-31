@@ -132,10 +132,6 @@ public class GameLogic : MonoBehaviour
             Money = 1f;
         else if (Money < minValue)
             Money = 0f;
-
-        Debug.Log("MONEY = " + Money);
-        Debug.Log("HEALTH = " + Health);
-        Debug.Log("MENTAL = " + Mental);
     }
 
     public void LoadCard(Card ncard)

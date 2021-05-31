@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feba115ee37b4464fb167d0de6bb8724, type: 3}
+  m_Name: kartu_teman3
+  m_EditorClassIdentifier: 
+  CardID: 0
+  CardName: Teman3
+  sprite: {fileID: 21300000, guid: 917f1109a1634ae4c9df0d8161753902, type: 3}
+  cardDialogue: T3
+  leftDialogue: T3 Kiri
+  RightDialogue: T3 Kanan
+  mental_left: 5
+  health_left: -5
+  money_left: -5
+  mental_right: 10
+  health_right: 10
+  money_right: -10
