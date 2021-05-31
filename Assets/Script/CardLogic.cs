@@ -15,11 +15,5 @@ public class CardLogic : MonoBehaviour
     {
         isMouseOver = false;
     }
-}
 
-public enum CardSprite
-{
-    ONE,
-    TWO,
-    THREE,
 }

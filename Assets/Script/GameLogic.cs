@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameLogic : MonoBehaviour
 {
@@ -9,9 +10,7 @@ public class GameLogic : MonoBehaviour
     public GameObject card;
     public SpriteRenderer CardSpriteRenderer;
     public ResourceManager resourceManager;
-    public ResourceManager[] cards;
     public CardLogic cl;
-    SpriteRenderer sr;
 
     // Card Movement
     public float fMovingSpeed = 3f;
@@ -19,9 +18,10 @@ public class GameLogic : MonoBehaviour
     public float fsidetrigger;
 
     // UI
-    public TMP_Text display;
     public TMP_Text carddialoguetext;
     public TMP_Text dialogue;
+    public Image dialogue_box;
+    public Text Month;
 
     // Card Variables
     private string leftdialogue;
@@ -29,46 +29,69 @@ public class GameLogic : MonoBehaviour
     public Card currentCard;
     private string cardDialogue;
     private int deck_length;
+    private int month_count = 1;
+
+    // Card flip
+    public Vector3 cardRotation;
+    public Vector3 Currentrotation;
+    public Vector3 Initialrotation;
+    public bool isFliping = false;
+    public float fRotatingSpeed;
+    public Sprite cardBack;
+
+    // Parameter
+    public float Money = 1f;
+    public float Health = 1f;
+    public float Mental = 1f;
+    public float maxValue = 100;
+    public float minValue = 0;
 
     void Start()
     {
         deck_length = resourceManager.cards.Length - 1;
-        sr = card.GetComponent<SpriteRenderer>();
+        NewCard();
+        Month.text = "0 M";
     }
 
     void Update()
     {
         //Check Side
-        if (card.transform.position.x < -fsidetrigger)
-        {
-            if (Input.GetMouseButtonUp(0))
-            {
-                currentCard.Left();
-                NewCard();
-            }
-        }
-        else if (card.transform.position.x > fsidetrigger)
-        {
-            if (Input.GetMouseButtonUp(0))
-            {
-                currentCard.Right();
-                NewCard();
-            }
-        }
-
-        if (card.transform.position.x > fsidemargin)    //Kanan
-        {
-            dialogue.text = rightdialogue;
-            dialogue.alpha = Mathf.Min(card.transform.position.x, 1);
-        }
-        else if (card.transform.position.x < -fsidemargin)   //Kiri
+        if (card.transform.position.x < -fsidemargin)   // Left
         {
             dialogue.text = leftdialogue;
             dialogue.alpha = Mathf.Min(-card.transform.position.x, 1);
+            dialogue_box.CrossFadeAlpha(1, 0.1f, true);
+            if (Input.GetMouseButtonUp(0))
+            {
+                NewCard();
+                Money += currentCard.money_left / maxValue;
+                Health += currentCard.health_left / maxValue;
+                Mental += currentCard.mental_left / maxValue;
+                Month.text = month_count++ + " M";
+            }
+        }
+        else if (card.transform.position.x > fsidemargin)   // Right
+        {
+            dialogue.text = rightdialogue;
+            dialogue.alpha = Mathf.Min(card.transform.position.x, 1);
+            dialogue_box.CrossFadeAlpha(1, 0.1f, true);
+            if (Input.GetMouseButtonUp(0))
+            {
+                NewCard();
+                Money += currentCard.money_right / maxValue;
+                Health += currentCard.health_right / maxValue;
+                Mental += currentCard.mental_right / maxValue;
+                Month.text = month_count++ + " M";
+
+                Debug.Log("Money = " + currentCard.money_right / maxValue);
+                Debug.Log("Health = " + currentCard.health_right / maxValue);
+                Debug.Log("Mental = " + currentCard.mental_right / maxValue);
+            }
         }
         else
         {
             dialogue.alpha = Mathf.Min(card.transform.position.x, 0);
+            dialogue_box.CrossFadeAlpha(0, 0.1f, true);
         }
 
         //Moving
@@ -78,13 +101,34 @@ public class GameLogic : MonoBehaviour
             pos.y = 0f;
             card.transform.position = pos;
         }
-        else
+        else if (!isFliping)
         {
             card.transform.position = Vector2.MoveTowards(transform.position, new Vector2(0, 0), fMovingSpeed);
+            card.transform.eulerAngles = new Vector3(0, 0, 0);
         }
+        else if (isFliping)
+        {
+            card.transform.eulerAngles = Vector3.MoveTowards(card.transform.eulerAngles, cardRotation, fRotatingSpeed);
+            if(card.transform.eulerAngles.y >= 90)
+            {
+                CardSpriteRenderer.sprite = cardBack;
+            }
+            else
+            {
+                CardSpriteRenderer.sprite = currentCard.sprite;
+            }
+        }
+
+        // Rotating card
+        if(card.transform.eulerAngles == cardRotation)
+        {
+            isFliping = false;
+        }
+
+        // Keep Health max and Min
     }
 
-    public void LoadCard(Card card)
+    public void LoadCard(Card ncard)
     {
         if (deck_length == 0)
         {
@@ -92,12 +136,18 @@ public class GameLogic : MonoBehaviour
         }
         else
         {
-            CardSpriteRenderer.sprite = card.sprite;
-            leftdialogue = card.leftDialogue;
-            rightdialogue = card.RightDialogue;
-            carddialoguetext.text = card.cardDialogue;
-            currentCard = card;
+            currentCard = ncard;
+            CardSpriteRenderer.sprite = ncard.sprite;
+            leftdialogue = ncard.leftDialogue;
+            rightdialogue = ncard.RightDialogue;
+            carddialoguetext.text = ncard.cardDialogue;
+
+            // Reset card position
+            card.transform.position = new Vector2(0, 0);
+            card.transform.eulerAngles = new Vector3(0, 0, 0);
             
+            isFliping = true;
+            card.transform.eulerAngles = Initialrotation;
         }
     }
 
@@ -108,7 +158,7 @@ public class GameLogic : MonoBehaviour
         LoadCard(resourceManager.cards[nilai_acak]);
         
         // Hapus kartu yang sudah muncul
-        for (int i = nilai_acak; i < deck_length - 1; i++)
+        for (int i = nilai_acak; i < deck_length; i++)
         {
             resourceManager.cards[i] = resourceManager.cards[i + 1];
         }

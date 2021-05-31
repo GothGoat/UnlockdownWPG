@@ -10,13 +10,13 @@ public class Card : ScriptableObject
     public string cardDialogue;
     public string leftDialogue;
     public string RightDialogue;
-    public void Left()
-    {
-        Debug.Log(CardName + " swipe left");
-    }
+    
+    // Parameter
+    public int mental_left;
+    public int health_left;
+    public int money_left;
 
-    public void Right()
-    {
-        Debug.Log(CardName + " swipe right");
-    }
+    public int mental_right;
+    public int health_right;
+    public int money_right;
 }
