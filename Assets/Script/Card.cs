@@ -12,11 +12,26 @@ public class Card : ScriptableObject
     public string RightDialogue;
     
     // Parameter
-    public int mental_left;
-    public int health_left;
-    public int money_left;
+    public float mental_left;
+    public float health_left;
+    public float money_left;
 
-    public int mental_right;
-    public int health_right;
-    public int money_right;
+    public float mental_right;
+    public float health_right;
+    public float money_right;
+
+    public void Left()
+    {
+        GameLogic.Health += health_left / 100f;
+        GameLogic.Mental += mental_left / 100f;
+        GameLogic.Money += money_left / 100f;
+    }
+
+    public void Right()
+    {
+        GameLogic.Health += health_right / 100f;
+        GameLogic.Mental += mental_right / 100f;
+        GameLogic.Money += money_right / 100f;
+    }
+
 }

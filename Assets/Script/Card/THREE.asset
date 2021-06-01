@@ -18,9 +18,9 @@ MonoBehaviour:
   cardDialogue: Card Dialogue 3
   leftDialogue: Left
   RightDialogue: Right
-  mental_left: -5
+  mental_left: -10
   health_left: 0
   money_left: 0
   mental_right: -10
   health_right: 0
-  money_right: -5
+  money_right: -10
