@@ -4,12 +4,12 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Card : ScriptableObject
 {
-    public int CardID;
     public string CardName;
     public Sprite sprite;
     public string cardDialogue;
     public string leftDialogue;
     public string RightDialogue;
+    public bool karma;
     
     // Parameter
     public float mental_left;
@@ -25,6 +25,9 @@ public class Card : ScriptableObject
         GameLogic.Health += health_left / 100f;
         GameLogic.Mental += mental_left / 100f;
         GameLogic.Money += money_left / 100f;
+
+        if (karma)
+            GameLogic.iskarmaBad = true;
     }
 
     public void Right()
@@ -32,6 +35,9 @@ public class Card : ScriptableObject
         GameLogic.Health += health_right / 100f;
         GameLogic.Mental += mental_right / 100f;
         GameLogic.Money += money_right / 100f;
+
+        if (karma)
+            GameLogic.iskarmaGood = true;
     }
 
 }

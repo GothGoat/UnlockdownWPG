@@ -11,6 +11,7 @@ public class GameLogic : MonoBehaviour
     public SpriteRenderer CardSpriteRenderer;
     public ResourceManager resourceManager;
     public CardLogic cl;
+    public Karma karma;
 
     // Card Movement
     public float fMovingSpeed = 3f;
@@ -24,18 +25,24 @@ public class GameLogic : MonoBehaviour
     public Text Month;
 
     // Card Variables
-    private string leftdialogue;
-    private string rightdialogue;
+    [HideInInspector] public string leftdialogue;
+    [HideInInspector] public string rightdialogue;
     public Card currentCard;
-    private string cardDialogue;
+    [HideInInspector] public string cardDialogue;
     private int deck_length;
-    private int month_count = 1;
+    public int month_count = 1;
+    
+    // Karma System
+    public static bool iskarmaGood;
+    public static bool iskarmaBad;
+    public Image Good;
+    public Image Bad;
 
     // Card flip
-    public Vector3 cardRotation;
-    public Vector3 Currentrotation;
+    [HideInInspector] public Vector3 cardRotation;
+    [HideInInspector] public Vector3 Currentrotation;
     public Vector3 Initialrotation;
-    public bool isFliping = false;
+    [HideInInspector] public bool isFliping = false;
     public float fRotatingSpeed;
     public Sprite cardBack;
 
@@ -49,6 +56,8 @@ public class GameLogic : MonoBehaviour
     void Start()
     {
         deck_length = resourceManager.cards.Length - 1;
+        iskarmaBad = false;
+        iskarmaGood = false;
         NewCard();
         Month.text = "0 M";
     }
@@ -63,9 +72,15 @@ public class GameLogic : MonoBehaviour
             dialogue_box.CrossFadeAlpha(1, 0.1f, true);
             if (Input.GetMouseButtonUp(0))
             {
-                currentCard.Left(); 
+                currentCard.Left();
+                karma.Impact();
                 NewCard();
                 Month.text = month_count++ + " M";
+
+                if (iskarmaBad)
+                {
+                    iskarmaBad = false;
+                }
             }
         }
         else if (card.transform.position.x > fsidemargin)   // Right
@@ -76,8 +91,14 @@ public class GameLogic : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 currentCard.Right();
+                karma.Impact();
                 NewCard();
                 Month.text = month_count++ + " M";
+
+                if (iskarmaBad)
+                {
+                    iskarmaBad = false;
+                }
             }
         }
         else
@@ -147,7 +168,14 @@ public class GameLogic : MonoBehaviour
             leftdialogue = ncard.leftDialogue;
             rightdialogue = ncard.RightDialogue;
             carddialoguetext.text = ncard.cardDialogue;
-            
+
+            if (iskarmaBad)
+            {
+                Health -= 0.2f;
+                Mental -= 0.2f;
+                Money -= 0.2f;
+            }
+
             // Reset card position
             card.transform.position = new Vector2(0, 0);
             card.transform.eulerAngles = new Vector3(0, 0, 0);

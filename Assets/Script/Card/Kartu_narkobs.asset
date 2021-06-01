@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feba115ee37b4464fb167d0de6bb8724, type: 3}
   m_Name: Kartu_narkobs
   m_EditorClassIdentifier: 
-  CardID: 0
   CardName: Bandar Narkoba
   sprite: {fileID: 21300000, guid: c2c7a51fd4fdc7a4ab673ad305a9df56, type: 3}
   cardDialogue: Narkoba
   leftDialogue: Narkoba Kiri
   RightDialogue: Narkoba Kanan
+  karma: 1
   mental_left: 0
   health_left: -10
   money_left: -10
