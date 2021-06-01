@@ -18,9 +18,9 @@ MonoBehaviour:
   leftDialogue: Boss Kiri
   RightDialogue: Boss Kanan
   karma: 1
-  mental_left: -5
-  health_left: 0
-  money_left: 5
-  mental_right: 0
-  health_right: 0
+  mental_left: -10
+  health_left: -20
+  money_left: -10
+  mental_right: -20
+  health_right: -20
   money_right: -10
