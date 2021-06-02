@@ -10,11 +10,12 @@ public class Gamelogicmainmenu : MonoBehaviour
 
     public GameObject card;
     public CardLogic cl;
-    public SpriteRenderer sr;
+    SpriteRenderer sr;
 
     private void Start()
     {
         sr = card.GetComponent<SpriteRenderer>();
+        card.transform.position = new Vector2(0, 0);
     }
 
     public void Update()
