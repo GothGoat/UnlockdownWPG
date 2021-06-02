@@ -30,6 +30,20 @@ public class Gamelogicmainmenu : MonoBehaviour
         {
             card.transform.position = Vector2.MoveTowards(transform.position, new Vector2(0, 0), fMovingSpeed);
         }
+
+        //warna
+        if (card.transform.position.x > 0.5)
+        {
+            sr.color = Color.green;
+        }
+        else if (card.transform.position.x < -0.5)
+        {
+            sr.color = Color.red;
+        }
+        else
+        {
+            sr.color = Color.white;
+        }
     }
 }
 

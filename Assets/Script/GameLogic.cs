@@ -78,12 +78,6 @@ public class GameLogic : MonoBehaviour
                     NewCard();
                     Month.text = month_count++ + " M";
                 }
-
-                if (iskarmaBad)
-                {
-                    iskarmaBad = false;
-                    Debug.Log("Bad Deactivate");
-                }
             }
         }
         else if (card.transform.position.x > fsidemargin)   // Right
@@ -100,11 +94,6 @@ public class GameLogic : MonoBehaviour
                 {
                     NewCard();
                     Month.text = month_count++ + " M";
-                }
-
-                if (iskarmaBad)
-                {
-                    iskarmaBad = false;
                 }
             }
         }

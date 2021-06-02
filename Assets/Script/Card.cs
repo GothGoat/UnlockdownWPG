@@ -35,6 +35,11 @@ public class Card : ScriptableObject
             GameLogic.Money += Karma.badDebuff / 100f;
 
         }
+        if (GameLogic.iskarmaBad)
+        {
+            GameLogic.iskarmaBad = false;
+        }
+
         if (karma)
         { 
             GameLogic.iskarmaBad = true;
@@ -55,6 +60,11 @@ public class Card : ScriptableObject
             GameLogic.Health += Karma.badDebuff / 100f;
             GameLogic.Mental += Karma.badDebuff / 100f;
             GameLogic.Money += Karma.badDebuff / 100f;
+        }
+        
+        if (GameLogic.iskarmaBad)
+        {
+            GameLogic.iskarmaBad = false;
         }
 
         if (karma)

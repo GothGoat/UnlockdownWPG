@@ -28,6 +28,5 @@ public class Karma : MonoBehaviour
             GL.Bad.sprite = Resources.Load<Sprite>("Sprites/Bad");
         else if (!GameLogic.iskarmaBad)
             GL.Bad.sprite = Resources.Load<Sprite>("Sprites/Default");
-
     }
 }
