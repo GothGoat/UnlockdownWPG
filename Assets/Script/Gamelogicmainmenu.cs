@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Gamelogicmainmenu : MonoBehaviour
 {
@@ -30,6 +31,37 @@ public class Gamelogicmainmenu : MonoBehaviour
         else
         {
             card.transform.position = Vector2.MoveTowards(transform.position, new Vector2(0, 0), fMovingSpeed);
+        }
+
+        //warna
+
+        if (card.transform.position.x > 0.5)
+        {
+            sr.color = Color.green;
+        }
+        else if (card.transform.position.x < -0.5)
+        {
+            sr.color = Color.red;
+        }
+        else
+        {
+            sr.color = Color.white;
+
+        }
+
+    }
+    public void PlayGame()
+    {
+
+        //scene 
+        if (card.transform.position.x > 0.5)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else
+        {
+            Debug.Log("QUIT");
+            Application.Quit();
         }
     }
 }
