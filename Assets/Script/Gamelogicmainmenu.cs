@@ -21,6 +21,22 @@ public class Gamelogicmainmenu : MonoBehaviour
 
     public void Update()
     {
+        //scene
+        if (Input.GetMouseButtonUp(0))
+        {
+            Debug.Log("code berhasil");
+            //scene 
+            if (card.transform.position.x > 0.5)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            else if (card.transform.position.x < -0.5)
+            {
+                Debug.Log("QUIT");
+                Application.Quit();
+            }
+        }
+
         //Moving
         if (Input.GetMouseButton(0) && cl.isMouseOver)
         {
@@ -50,19 +66,6 @@ public class Gamelogicmainmenu : MonoBehaviour
         }
 
     }
-    public void PlayGame()
-    {
-
-        //scene 
-        if (card.transform.position.x > 0.5)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-        else
-        {
-            Debug.Log("QUIT");
-            Application.Quit();
-        }
-    }
 }
+
 
