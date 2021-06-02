@@ -869,7 +869,7 @@ Camera:
   m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 0
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
@@ -2039,7 +2039,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -673.5}
-  m_SizeDelta: {x: 1080, y: 436.34555}
+  m_SizeDelta: {x: 2850, y: 436.34555}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1719424759
 MonoBehaviour:
