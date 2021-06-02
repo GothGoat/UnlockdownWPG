@@ -981,7 +981,6 @@ MonoBehaviour:
   karma: {fileID: 778019837}
   fMovingSpeed: 3
   fsidemargin: 0.5
-  fsidetrigger: 1.5
   carddialoguetext: {fileID: 276626185}
   dialogue: {fileID: 1623316725}
   dialogue_box: {fileID: 1719424759}
@@ -1091,12 +1090,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8a141ab626b61e4c902ec47cf99d046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthWin: {fileID: 0}
-  mentalWin: {fileID: 0}
-  moneyWin: {fileID: 0}
-  healthLose: {fileID: 0}
-  mentalLose: {fileID: 0}
-  moneyLose: {fileID: 0}
+  healthWin: {fileID: 11400000, guid: b3b4edecbdd21f9439d9a2fd698f4a72, type: 2}
+  mentalWin: {fileID: 11400000, guid: 9c1df6b8ca5d516438ff59878aa7ef46, type: 2}
+  moneyWin: {fileID: 11400000, guid: 204a88d477f44064aae8ec11de2d92de, type: 2}
+  healthLose: {fileID: 11400000, guid: eae5c46546679c34f8948d1bd809357a, type: 2}
+  mentalLose: {fileID: 11400000, guid: bc6d0002c7541d64885232ce8057982b, type: 2}
+  moneyLose: {fileID: 11400000, guid: b122fef28c2be0d48b7e4efaa4e03aff, type: 2}
 --- !u!1 &814414743
 GameObject:
   m_ObjectHideFlags: 0

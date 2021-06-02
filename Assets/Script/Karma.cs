@@ -5,11 +5,18 @@ using UnityEngine;
 public class Karma : MonoBehaviour
 {
     GameLogic GL;
+    public static float badDebuff;
 
     private void Awake()
     {
         GL = GameObject.Find("GameManager").GetComponent<GameLogic>();
     }
+
+    public void Start()
+    {
+        badDebuff = -20f;
+    }
+
     public void Impact()
     {
         if (GameLogic.iskarmaGood)

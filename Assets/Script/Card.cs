@@ -22,19 +22,40 @@ public class Card : ScriptableObject
 
     public void Left()
     {
-        GameLogic.Health += health_left / 100f;
-        GameLogic.Mental += mental_left / 100f;
-        GameLogic.Money += money_left / 100f;
+        if (!GameLogic.iskarmaBad)
+        {
+            GameLogic.Health += health_left / 100f;
+            GameLogic.Mental += mental_left / 100f;
+            GameLogic.Money += money_left / 100f;
+        }
+        else if (GameLogic.iskarmaBad)
+        {
+            GameLogic.Health += Karma.badDebuff / 100f;
+            GameLogic.Mental += Karma.badDebuff  / 100f;
+            GameLogic.Money += Karma.badDebuff / 100f;
 
+        }
         if (karma)
+        { 
             GameLogic.iskarmaBad = true;
+            Debug.Log("Bad Activate");
+        }
     }
 
     public void Right()
     {
-        GameLogic.Health += health_right / 100f;
-        GameLogic.Mental += mental_right / 100f;
-        GameLogic.Money += money_right / 100f;
+        if (!GameLogic.iskarmaBad)
+        {
+            GameLogic.Health += health_right / 100f;
+            GameLogic.Mental += mental_right / 100f;
+            GameLogic.Money += money_right / 100f;
+        }
+        else if (GameLogic.iskarmaBad)
+        {
+            GameLogic.Health += Karma.badDebuff / 100f;
+            GameLogic.Mental += Karma.badDebuff / 100f;
+            GameLogic.Money += Karma.badDebuff / 100f;
+        }
 
         if (karma)
             GameLogic.iskarmaGood = true;

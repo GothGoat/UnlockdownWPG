@@ -15,6 +15,7 @@ public class WinLose : MonoBehaviour
     public Card mentalLose;
     public Card moneyLose;
 
+    public static bool GameOver = false;
     void Awake()
     {
         GL = GameObject.Find("GameManager").GetComponent<GameLogic>();
@@ -22,13 +23,15 @@ public class WinLose : MonoBehaviour
 
     void Update()
     {
-        if (GL.month_count >= 36)
+        if (GL.month_count > 15)
         {
             Win();
+            GameOver = true;
         }
         else if (GameLogic.Health <= 0 || GameLogic.Mental <= 0 || GameLogic.Money <= 0)
         {
             Lose();
+            GameOver = true;
         }
     }
 
@@ -42,6 +45,27 @@ public class WinLose : MonoBehaviour
             GL.leftdialogue = healthWin.leftDialogue;
             GL.rightdialogue = healthWin.RightDialogue;
             GL.carddialoguetext.text = healthWin.cardDialogue;
+
+            if (GL.card.transform.position.x < -GL.fsidemargin)   // Left
+            {
+                GL.dialogue.text = GL.leftdialogue;
+                GL.dialogue.alpha = Mathf.Min(-GL.card.transform.position.x, 1);
+                GL.dialogue_box.CrossFadeAlpha(1, 0.1f, true);
+                if (Input.GetMouseButtonUp(0))
+                {
+                    // Back To Main Menu
+                }
+            }
+            else if (GL.card.transform.position.x > GL.fsidemargin)   // Right
+            {
+                GL.dialogue.text = GL.rightdialogue;
+                GL.dialogue.alpha = Mathf.Min(GL.card.transform.position.x, 1);
+                GL.dialogue_box.CrossFadeAlpha(1, 0.1f, true);
+                if (Input.GetMouseButtonUp(0))
+                {
+                    // Play Again
+                }
+            }
         }
         else if (GameLogic.Money > GameLogic.Health && GameLogic.Money > GameLogic.Mental)
         {
