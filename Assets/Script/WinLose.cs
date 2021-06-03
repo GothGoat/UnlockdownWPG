@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class WinLose : MonoBehaviour
 {
     GameLogic GL;
+    public Karma karma;
+
     // Win
     public Card healthWin;
     public Card mentalWin;
@@ -37,7 +39,6 @@ public class WinLose : MonoBehaviour
         else if (GameLogic.Health <= 0 || GameLogic.Mental <= 0 || GameLogic.Money <= 0)
         {
             Lose();
-            GameOver = true;
         }
     }
 
@@ -75,15 +76,17 @@ public class WinLose : MonoBehaviour
     {
         if (GameLogic.iskarmaGood) // Karma Good Impact
         {
-            GameLogic.Health += 0.2f;
-            GameLogic.Mental += 0.2f;
-            GameLogic.Money += 0.2f;
+            GameLogic.Health += 0.5f;
+            GameLogic.Mental += 0.5f;
+            GameLogic.Money += 0.5f;
             GameLogic.iskarmaGood = false;
+            karma.Impact();
         }
         else
         {
             Debug.Log("You Lose");
-            if (GameLogic.Mental <= 0)
+            GameOver = true;
+            if (GameLogic.Mental <= 0.005f)
             {
                 GL.currentCard = mentalLose;
                 GL.CardSpriteRenderer.sprite = mentalLose.sprite;
@@ -91,15 +94,15 @@ public class WinLose : MonoBehaviour
                 GL.rightdialogue = mentalLose.RightDialogue;
                 GL.carddialoguetext.text = mentalLose.cardDialogue;
             }
-            else if (GameLogic.Health <= 0)
+            else if (GameLogic.Money <= 0.005f)
             {
-                GL.currentCard = healthLose;
-                GL.CardSpriteRenderer.sprite = healthLose.sprite;
-                GL.leftdialogue = healthLose.leftDialogue;
-                GL.rightdialogue = healthLose.RightDialogue;
-                GL.carddialoguetext.text = healthLose.cardDialogue;
+                GL.currentCard = moneyLose;
+                GL.CardSpriteRenderer.sprite = moneyLose.sprite;
+                GL.leftdialogue = moneyLose.leftDialogue;
+                GL.rightdialogue = moneyLose.RightDialogue;
+                GL.carddialoguetext.text = moneyLose.cardDialogue;
             }
-            else if (GameLogic.Health <= 0)
+            else if (GameLogic.Health <= 0.005f)
             {
                 GL.currentCard = healthLose;
                 GL.CardSpriteRenderer.sprite = healthLose.sprite;

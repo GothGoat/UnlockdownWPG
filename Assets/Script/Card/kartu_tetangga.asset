@@ -15,7 +15,7 @@ MonoBehaviour:
   CardName: Tetangga
   sprite: {fileID: 21300000, guid: e630a8830df394b40833040e5f9f45db, type: 3}
   cardDialogue: 'Woi Les, bsk pagi sepedaan keliling skuy '
-  leftDialogue: Kapan-kapan aja dah Bro, besok mau bangun siang nihh
+  leftDialogue: Kapan-kapan aja dah, besok mau bangun siang nihh
   RightDialogue: Ayok lah! Dah lama gak olahraga juga
   karma: 0
   mental_left: -10

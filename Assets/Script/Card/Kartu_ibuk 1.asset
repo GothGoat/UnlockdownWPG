@@ -18,7 +18,7 @@ MonoBehaviour:
     lupa. '
   leftDialogue: Aku kemarin lembur Bu, enggak dulu ya
   RightDialogue: Oke Bu
-  karma: 0
+  karma: 1
   mental_left: -20
   health_left: 0
   money_left: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   CardName: Tante
   sprite: {fileID: 21300000, guid: a3a77a7e8a557a343ad0ea9b35f8c9f4, type: 3}
   cardDialogue: 'Charles, sptnya saluran westafel di dapur tante rusak, pdhl mau
-    dipake cuci piring. Apa kamu bisa bantu saya? '
+    dipake cuci piring. Apa kamu bisa bantu tante? '
   leftDialogue: Maaf Tante, aku lagi banyak kerjaan jadi gak bisa ke sana
   RightDialogue: Oke Tante, aku menuju ke sana
   karma: 1

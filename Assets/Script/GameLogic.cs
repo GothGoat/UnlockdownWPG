@@ -55,6 +55,7 @@ public class GameLogic : MonoBehaviour
 
     void Start()
     {
+        WinLose.GameOver = false;
         deck_length = resourceManager.cards.Length - 1;
         iskarmaBad = false;
         iskarmaGood = false;
@@ -103,8 +104,8 @@ public class GameLogic : MonoBehaviour
                     NewCard();
                     Month.text = month_count++ + " M";
                 }
-                else
-                    Application.LoadLevel(Application.loadedLevel);
+                else if (WinLose.GameOver)
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
         else
