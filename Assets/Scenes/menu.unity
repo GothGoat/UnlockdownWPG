@@ -365,6 +365,9 @@ MonoBehaviour:
   fsidemargin: 1
   card: {fileID: 2045640925}
   cl: {fileID: 2045640929}
+  Text: {fileID: 1379683098}
+  leftText: QUIT
+  rightText: START
 --- !u!1 &456910978
 GameObject:
   m_ObjectHideFlags: 0
