@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameLogic : MonoBehaviour
 {
@@ -46,9 +47,9 @@ public class GameLogic : MonoBehaviour
     public Sprite cardBack;
 
     // Parameter
-    public static float Money = 1f;
-    public static float Health = 1f;
-    public static float Mental = 1f;
+    public static float Money;
+    public static float Health;
+    public static float Mental;
     public float maxValue = 1f;
     public float minValue = 0f;
 
@@ -59,6 +60,9 @@ public class GameLogic : MonoBehaviour
         iskarmaGood = false;
         NewCard();
         Month.text = "0 M";
+        Money = 1f;
+        Health = 1f;
+        Mental = 1f;
     }
 
     void Update()
@@ -78,6 +82,10 @@ public class GameLogic : MonoBehaviour
                     NewCard();
                     Month.text = month_count++ + " M";
                 }
+                else
+                {
+                    SceneManager.LoadScene(0);
+                }
             }
         }
         else if (card.transform.position.x > fsidemargin)   // Right
@@ -95,6 +103,8 @@ public class GameLogic : MonoBehaviour
                     NewCard();
                     Month.text = month_count++ + " M";
                 }
+                else
+                    Application.LoadLevel(Application.loadedLevel);
             }
         }
         else

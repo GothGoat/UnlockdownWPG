@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Gamelogicmainmenu : MonoBehaviour
 {
@@ -13,13 +14,43 @@ public class Gamelogicmainmenu : MonoBehaviour
     public CardLogic cl;
     SpriteRenderer sr;
 
+    public TMP_Text Text;
+    public string leftText;
+    public string rightText;
+
     private void Start()
     {
         sr = card.GetComponent<SpriteRenderer>();
+        card.transform.position = new Vector2(0, 0);
     }
 
     public void Update()
     {
+        if (card.transform.position.x > 0.5)    // Kanan
+        {
+            Text.text = rightText;
+            Text.alpha = Mathf.Min(card.transform.position.x, 1);
+            if (Input.GetMouseButtonUp(0))
+            {
+                Debug.Log("code berhasil");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
+        else if (card.transform.position.x < -0.5) // Kiri
+        {
+            Text.text = leftText;
+            Text.alpha = Mathf.Min(-card.transform.position.x, 1);
+            if (Input.GetMouseButtonUp(0))
+            {
+                Debug.Log("QUIT");
+                Application.Quit();
+            }
+        }
+        else
+        {
+            Text.alpha = Mathf.Min(card.transform.position.x, 0);
+        }
+    
         //Moving
         if (Input.GetMouseButton(0) && cl.isMouseOver)
         {
@@ -33,28 +64,22 @@ public class Gamelogicmainmenu : MonoBehaviour
         }
 
         //warna
-        if (card.transform.position.x > fsidemargin)    // Kanan
+
+        if (card.transform.position.x > 0.5)
         {
             sr.color = Color.green;
-            if (Input.GetMouseButtonUp(0))
-            {
-                SceneManager.LoadScene(1);
-            }
         }
-        else if (card.transform.position.x < -fsidemargin)  // Kiri
+        else if (card.transform.position.x < -0.5)
         {
             sr.color = Color.red;
-            if (Input.GetMouseButtonUp(0))
-            {
-                Application.Quit();
-                Debug.Log("Quit");
-                // Quit Game
-            }
         }
         else
         {
             sr.color = Color.white;
+
         }
+
     }
 }
+
 

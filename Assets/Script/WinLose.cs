@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinLose : MonoBehaviour
 {
@@ -15,10 +16,15 @@ public class WinLose : MonoBehaviour
     public Card mentalLose;
     public Card moneyLose;
 
-    public static bool GameOver = false;
+    public static bool GameOver;
     void Awake()
     {
         GL = GameObject.Find("GameManager").GetComponent<GameLogic>();
+    }
+
+    void Start()
+    {
+        GameOver = false;
     }
 
     void Update()
@@ -46,26 +52,6 @@ public class WinLose : MonoBehaviour
             GL.rightdialogue = healthWin.RightDialogue;
             GL.carddialoguetext.text = healthWin.cardDialogue;
 
-            if (GL.card.transform.position.x < -GL.fsidemargin)   // Left
-            {
-                GL.dialogue.text = GL.leftdialogue;
-                GL.dialogue.alpha = Mathf.Min(-GL.card.transform.position.x, 1);
-                GL.dialogue_box.CrossFadeAlpha(1, 0.1f, true);
-                if (Input.GetMouseButtonUp(0))
-                {
-                    // Back To Main Menu
-                }
-            }
-            else if (GL.card.transform.position.x > GL.fsidemargin)   // Right
-            {
-                GL.dialogue.text = GL.rightdialogue;
-                GL.dialogue.alpha = Mathf.Min(GL.card.transform.position.x, 1);
-                GL.dialogue_box.CrossFadeAlpha(1, 0.1f, true);
-                if (Input.GetMouseButtonUp(0))
-                {
-                    // Play Again
-                }
-            }
         }
         else if (GameLogic.Money > GameLogic.Health && GameLogic.Money > GameLogic.Mental)
         {
@@ -89,9 +75,9 @@ public class WinLose : MonoBehaviour
     {
         if (GameLogic.iskarmaGood) // Karma Good Impact
         {
-            GameLogic.Health += 2;
-            GameLogic.Mental += 20;
-            GameLogic.Money += 20;
+            GameLogic.Health += 0.2f;
+            GameLogic.Mental += 0.2f;
+            GameLogic.Money += 0.2f;
             GameLogic.iskarmaGood = false;
         }
         else

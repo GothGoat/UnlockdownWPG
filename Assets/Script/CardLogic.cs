@@ -15,5 +15,4 @@ public class CardLogic : MonoBehaviour
     {
         isMouseOver = false;
     }
-
 }
