@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: feba115ee37b4464fb167d0de6bb8724, type: 3}
-  m_Name: kartu_teman2
+  m_Name: Kartu_doctor1
   m_EditorClassIdentifier: 
-  CardName: Teman2
-  sprite: {fileID: 21300000, guid: 2115a30582ba9cd4c8ea13b80c5603bd, type: 3}
-  cardDialogue: "Gimana kalo kita ke pasar ikan, trs beli cupang? Lucu weh wkwk\u2026  "
-  leftDialogue: Enggak ah, pasar kan rame, kalo ketularan gimana?
-  RightDialogue: wkwkw... ayok deh
+  CardName: Dokter lambung
+  sprite: {fileID: 21300000, guid: 04a61f5da27a90642b266be8ac627c10, type: 3}
+  cardDialogue: Apa lambungmu terasa sakit? sebaiknya datanglah padaku, kutunggu
+    skrg
+  leftDialogue: Tak apa Doc, sebentar lagi juga sembuh
+  RightDialogue: Baik Doc, aku menuju ke sana
   karma: 0
-  mental_left: -10
-  health_left: 0
+  mental_left: 0
+  health_left: -20
   money_left: 0
   mental_right: 0
-  health_right: -10
+  health_right: 10
   money_right: -10

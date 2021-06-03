@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: feba115ee37b4464fb167d0de6bb8724, type: 3}
-  m_Name: kartu_prt
+  m_Name: kartu_teman4
   m_EditorClassIdentifier: 
-  CardName: Pak RT
-  sprite: {fileID: 21300000, guid: 2b45fbf32d54c4a4d94f522e545262d2, type: 3}
-  cardDialogue: PRT
-  leftDialogue: PRT Kiri
-  RightDialogue: PRT Kanan
-  karma: 1
-  mental_left: 10
+  CardName: Teman3
+  sprite: {fileID: 21300000, guid: 917f1109a1634ae4c9df0d8161753902, type: 3}
+  cardDialogue: "Bro, mau jualan produk gua ga? Mumpung lagi best seller nih\u2026 "
+  leftDialogue: Gak dulu deh broo, lagi sibuk kerjaan nihh
+  RightDialogue: Boleh juga tuh, buat uang tambahan
+  karma: 0
+  mental_left: -10
   health_left: 0
   money_left: -10
-  mental_right: -10
+  mental_right: 0
   health_right: 0
-  money_right: 0
+  money_right: 20

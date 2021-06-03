@@ -28,8 +28,8 @@ public class Parameter : MonoBehaviour
     }
     void Start()
     {
-        big = 10;
-        small = 5;
+        big = 20;
+        small = 10;
         Money_fill.fillAmount = 0;
         Mental_fill.fillAmount = 0;
         Health_fill.fillAmount = 0;

@@ -29,7 +29,7 @@ public class WinLose : MonoBehaviour
 
     void Update()
     {
-        if (GL.month_count > 15)
+        if (GL.month_count > 36)
         {
             Win();
             GameOver = true;
