@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Win_Mental
   m_EditorClassIdentifier: 
   CardName: ONE
-  sprite: {fileID: 21300000, guid: f691f98cfad54b942b479b6cb2644a5d, type: 3}
-  cardDialogue: Mnetal Menang
+  sprite: {fileID: 21300000, guid: 25cdb8bc70e6105448ad94e70c77c1d3, type: 3}
+  cardDialogue: Lockdown menyebabkan kesehatan mental orang-orang terganggu, tapi
+    tidak denganmu. Kamu memiliki mental yang sangat sehat dan stabil di antara orang-orang
+    itu
   leftDialogue: Back To Main Menu
   RightDialogue: Play Again
   karma: 0

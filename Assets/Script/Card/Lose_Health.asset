@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Lose_Health
   m_EditorClassIdentifier: 
   CardName: ONE
-  sprite: {fileID: 21300000, guid: f691f98cfad54b942b479b6cb2644a5d, type: 3}
-  cardDialogue: Health kalah
-  leftDialogue: Back To Main Menu
+  sprite: {fileID: 21300000, guid: f692469e4ca1fd94d9d02e1c330e0ebe, type: 3}
+  cardDialogue: Kamu meninggal karena tertular virus COVID-19 dan penyakit-penyakit
+    lainnya
+  leftDialogue: Back to Main Menu
   RightDialogue: Play Again
   karma: 0
   mental_left: 0

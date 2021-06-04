@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class WinLose : MonoBehaviour
 {
     GameLogic GL;
+    public AudioManager AM;
     public Karma karma;
 
     // Win
@@ -19,6 +20,9 @@ public class WinLose : MonoBehaviour
     public Card moneyLose;
 
     public static bool GameOver;
+    public AudioClip winClip;
+    public AudioClip loseClip;
+
     void Awake()
     {
         GL = GameObject.Find("GameManager").GetComponent<GameLogic>();
@@ -45,6 +49,7 @@ public class WinLose : MonoBehaviour
     void Win()
     {
         Debug.Log("You Win");
+        AM.ChangeBGM(winClip);
         if (GameLogic.Health > GameLogic.Money && GameLogic.Health > GameLogic.Mental)
         {
             GL.currentCard = healthWin;
@@ -84,6 +89,7 @@ public class WinLose : MonoBehaviour
         }
         else
         {
+            AM.ChangeBGM(loseClip);
             Debug.Log("You Lose");
             GameOver = true;
             if (GameLogic.Mental <= 0.005f)

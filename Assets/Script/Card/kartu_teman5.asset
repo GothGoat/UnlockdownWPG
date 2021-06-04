@@ -15,7 +15,7 @@ MonoBehaviour:
   CardName: Teman35
   sprite: {fileID: 21300000, guid: 917f1109a1634ae4c9df0d8161753902, type: 3}
   cardDialogue: Rencananya gw ma yg laen bsk mo tanding futsal, lu mau join ga?
-  leftDialogue: Gak dulu dah, penularan COVID lagi naik nihh
+  leftDialogue: Gak dulu dah, penularan COVID lagi tinggi nihh
   RightDialogue: Gass, daripada gabut di rumah
   karma: 0
   mental_left: -10

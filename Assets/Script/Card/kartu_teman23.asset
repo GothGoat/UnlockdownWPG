@@ -20,7 +20,7 @@ MonoBehaviour:
   karma: 0
   mental_left: 20
   health_left: 0
-  money_left: 10
+  money_left: 0
   mental_right: 0
   health_right: -20
-  money_right: 0
+  money_right: 10

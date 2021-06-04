@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Win_Money
   m_EditorClassIdentifier: 
   CardName: ONE
-  sprite: {fileID: 21300000, guid: f691f98cfad54b942b479b6cb2644a5d, type: 3}
-  cardDialogue: Money Menang
+  sprite: {fileID: 21300000, guid: a473e80e85aa5744797f44026d53457d, type: 3}
+  cardDialogue: Karena kamu bekerja keras dan berusaha hemat selama lockdown, kamu
+    memiliki banyak uang dan menjadi orang terkaya di komplek perumahanmu!
   leftDialogue: Back To Main Menu
   RightDialogue: Play Again
   karma: 0

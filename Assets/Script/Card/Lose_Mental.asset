@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Lose_Mental
   m_EditorClassIdentifier: 
   CardName: ONE
-  sprite: {fileID: 21300000, guid: f691f98cfad54b942b479b6cb2644a5d, type: 3}
-  cardDialogue: Mental Kalah
-  leftDialogue: Back To Main Menu
+  sprite: {fileID: 21300000, guid: 22e270d8fb6ed144fa50521bd55e5a12, type: 3}
+  cardDialogue: Pikiranmu kacau dan mulai bicara melantur. Ibumu yang khawatir membawamu
+    ke rumah sakit jiwa. Dokter yang memeriksamu mengharuskan kamu agar direhabilitasi
+    mental
+  leftDialogue: Back to Main Menu
   RightDialogue: Play Again
   karma: 0
   mental_left: 0

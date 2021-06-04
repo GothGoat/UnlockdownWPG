@@ -187,12 +187,6 @@ public class GameLogic : MonoBehaviour
 
     public void NewCard()
     {
-        if (iskarmaBad)
-        {
-            iskarmaBad = false;
-            Debug.Log("Bad Deactivate");
-        }
-
         int acak = Random.Range(0, deck_length);
         int nilai_acak = acak;
         LoadCard(resourceManager.cards[nilai_acak]);

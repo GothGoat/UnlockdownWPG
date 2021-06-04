@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Lose_Money
   m_EditorClassIdentifier: 
   CardName: ONE
-  sprite: {fileID: 21300000, guid: f691f98cfad54b942b479b6cb2644a5d, type: 3}
-  cardDialogue: Money Kalah
+  sprite: {fileID: 21300000, guid: 1dc3ffd61274bc341bab5be2db564b53, type: 3}
+  cardDialogue: Karena gaya hidupmu selama lockdown, kamu kehabisan uang. Begitu
+    juga orang tuamu yang uangnya kamu habiskan
   leftDialogue: Back To Main Menu
   RightDialogue: Play Again
   karma: 0
