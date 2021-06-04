@@ -53,6 +53,9 @@ public class GameLogic : MonoBehaviour
     public float maxValue = 1f;
     public float minValue = 0f;
 
+    public AudioSource bgm;
+    public AudioSource lose;
+    public AudioSource win;
     void Start()
     {
         WinLose.GameOver = false;
@@ -64,6 +67,10 @@ public class GameLogic : MonoBehaviour
         Money = 1f;
         Health = 1f;
         Mental = 1f;
+
+        win.Stop();
+        lose.Stop();
+
     }
 
     void Update()
@@ -105,7 +112,9 @@ public class GameLogic : MonoBehaviour
                     Month.text = month_count++ + " M";
                 }
                 else if (WinLose.GameOver)
+                {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                }
             }
         }
         else
@@ -160,6 +169,12 @@ public class GameLogic : MonoBehaviour
             Money = 1f;
         else if (Money < minValue)
             Money = 0f;
+
+        // Stop music when gameover
+        if (WinLose.GameOver)
+        {
+            bgm.Stop();
+        }
     }
 
     public void LoadCard(Card ncard)

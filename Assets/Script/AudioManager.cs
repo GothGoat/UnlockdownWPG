@@ -1,17 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Audio;
+using System;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioSource BGM;
-    // Start is called before the first frame update
-    public void ChangeBGM(AudioClip music)
+    public Sound[] sounds;
+
+    void Awake()
     {
-        BGM.Stop();
-        BGM.clip = music;
-        BGM.Play();
+        foreach (Sound s in sounds)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
+
+            s.source.volume = s.volume;
+            s.source.pitch = s.pitch;
+        }
     }
 
-
+    public void Play (string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        s.source.Play();
+    }
 }
