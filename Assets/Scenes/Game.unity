@@ -632,6 +632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 0}
   isMouseOver: 0
+  GL: {fileID: 0}
 --- !u!61 &446451711
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1060,6 +1061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 0}
   isMouseOver: 0
+  GL: {fileID: 0}
 --- !u!114 &778019833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1079,6 +1081,7 @@ MonoBehaviour:
   karma: {fileID: 778019837}
   fMovingSpeed: 3
   fsidemargin: 0.5
+  startPosX: 0
   carddialoguetext: {fileID: 276626185}
   dialogue: {fileID: 1623316725}
   dialogue_box: {fileID: 1719424759}
@@ -1109,7 +1112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778019831}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -1.066522, y: -0.17445175, z: -11.7817955}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -295,7 +295,6 @@ GameObject:
   m_Component:
   - component: {fileID: 428673913}
   - component: {fileID: 428673915}
-  - component: {fileID: 428673916}
   m_Layer: 0
   m_Name: Main Menu Manager
   m_TagString: Untagged
@@ -330,25 +329,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subMenu: {fileID: 0}
---- !u!114 &428673916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 428673912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cf72c4a5eec1b645a4d964e58ff7b20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fMovingSpeed: 3
-  fsidemargin: 1
-  card: {fileID: 2045640925}
-  cl: {fileID: 2045640929}
-  Text: {fileID: 1379683098}
-  leftText: QUIT
-  rightText: START
 --- !u!1 &682701835
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,7 +944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1324299884
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1629,8 +1609,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\n\t\t\t\t\t\t\t\tMade by :\n\n\n\n\n\n\n\n\n\t\tGame Design\tMuhammad
-    Syafiudin Alfin\n\t\t\t\t\t\t\t\tBunga Adinda\n\t\t\t\t\t\t\t  \tIlham Satryo
-    Herlambang\n\n\t\tArtist \t\t\t\tMuhammad Aldo Izzulhaq\n\n\t\tProgrammer\t\tAnrio
+    Syafiudin Alfin\n\n\t\tArtist \t\t\t\tMuhammad Aldo Izzulhaq\n\n\t\tProgrammer\t\tAnrio
     Imam Rafifqi\n\n\n\t\t\t\t\t\t \t\t  Songs\n\t\t\t\t\t\t\"Osborne Highway\"\n\t\t\t\t 
     By FREE MUSIC MAISON\n\n\t\t\t\t\t\t\"Netherfield Brow\"\n\t\t\t\t  By FREE MUSIC
     MAISON\n"
@@ -2096,11 +2075,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2045640925}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8771f533a9fb6e747b3f254dd515018e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6cf72c4a5eec1b645a4d964e58ff7b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 0}
+  fMovingSpeed: 3
+  fsidemargin: 1
+  startPosX: 0
   isMouseOver: 0
+  card: {fileID: 2045640925}
+  sr: {fileID: 2045640926}
+  Text: {fileID: 1379683098}
+  leftText: QUIT
+  rightText: START
 --- !u!1 &2069172264
 GameObject:
   m_ObjectHideFlags: 0
