@@ -20,7 +20,7 @@ public class Parameter : MonoBehaviour
     public int big;
     public int small;
 
-    public float speed = 0.05f;
+    public float speed = 0.001f;
 
     void Awake()
     {
@@ -35,8 +35,8 @@ public class Parameter : MonoBehaviour
         Health_fill.fillAmount = 0;
     }
     void Update()
-    {   
-     
+    {
+        // FILL
         // Fill Money
         if (Money_fill.fillAmount > GameLogic.Money)
         {

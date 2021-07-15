@@ -17,7 +17,6 @@ public class GameLogic : MonoBehaviour
     // Card Movement
     public float fMovingSpeed = 3f;
     public float fsidemargin;
-    public float startPosX;
 
     // UI
     public TMP_Text carddialoguetext;
@@ -122,16 +121,11 @@ public class GameLogic : MonoBehaviour
         }
 
         //Moving
-        if (cl.isMouseOver)
+        if (Input.GetMouseButton(0) && cl.isMouseOver)
         {
-            Vector2 mousePos;
-            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            card.gameObject.transform.localPosition = new Vector2(mousePos.x - startPosX, 0);
-            // Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - card.transform.position;
-            // pos.y = 0f;
-            // card.transform.Translate(pos); 
-            // card.transform.position = pos;
+            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            pos.y = 0f;
+            card.transform.position = pos;
         }
         else if (!isFliping)
         {
@@ -215,8 +209,5 @@ public class GameLogic : MonoBehaviour
             resourceManager.cards[i] = resourceManager.cards[i + 1];
         }
         deck_length--;
-        Debug.Log("Health = " + Health);
-        Debug.Log("Mental = " + Mental);
-        Debug.Log("Money = " + Money);
     }
 }

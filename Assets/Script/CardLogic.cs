@@ -4,28 +4,14 @@ using UnityEngine;
 
 public class CardLogic : MonoBehaviour
 {
-    public GameObject card;
+    public Card card;
     public bool isMouseOver = false;
-    public GameLogic GL;
-
-    public void Awake()
+    private void OnMouseOver()
     {
-        GL = GameObject.Find("GameManager").GetComponent<GameLogic>();
-    }
-    private void OnMouseDown()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector2 mousePos;
-            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            GL.startPosX = mousePos.x - GL.card.transform.localPosition.x;
-
-            isMouseOver = true;
-        }
+        isMouseOver = true;
     }
 
-    private void OnMouseUp()
+    private void OnMouseExit()
     {
         isMouseOver = false;
     }

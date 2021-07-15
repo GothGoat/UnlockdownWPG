@@ -9,15 +9,20 @@ public class Gamelogicmainmenu : MonoBehaviour
     // Card Movement
     public float fMovingSpeed = 3f;
     public float fsidemargin;
-    public float startPosX;
-    public bool isMouseOver = false;
 
     public GameObject card;
-    public SpriteRenderer sr;
+    public CardLogic cl;
+    SpriteRenderer sr;
 
     public TMP_Text Text;
     public string leftText;
     public string rightText;
+
+    private void Start()
+    {
+        sr = card.GetComponent<SpriteRenderer>();
+        card.transform.position = new Vector2(0, 0);
+    }
 
     public void Update()
     {
@@ -45,21 +50,21 @@ public class Gamelogicmainmenu : MonoBehaviour
         {
             Text.alpha = Mathf.Min(card.transform.position.x, 0);
         }
-
+    
         //Moving
-        if (isMouseOver)
+        if (Input.GetMouseButton(0) && cl.isMouseOver)
         {
-            Vector2 mousePos;
-            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            card.gameObject.transform.localPosition = new Vector2(mousePos.x - startPosX, 0);
+            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            pos.y = 0f;
+            card.transform.position = pos;
         }
         else
         {
             card.transform.position = Vector2.MoveTowards(transform.position, new Vector2(0, 0), fMovingSpeed);
         }
 
-        //Warna
+        //warna
+
         if (card.transform.position.x > 0.5)
         {
             sr.color = Color.green;
@@ -71,24 +76,9 @@ public class Gamelogicmainmenu : MonoBehaviour
         else
         {
             sr.color = Color.white;
+
         }
-    }
-    private void OnMouseDown()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector2 mousePos;
-            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            startPosX = mousePos.x - card.transform.localPosition.x;
-
-            isMouseOver = true;
-        }
-    }
-
-    private void OnMouseUp()
-    {
-        isMouseOver = false;
     }
 }
 
