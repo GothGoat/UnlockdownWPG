@@ -1202,6 +1202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d783e9a11dc331144833cd12279adf1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gKarma_UI: 0
+  bKarma_UI: 0
 --- !u!114 &778019838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1680,7 +1682,7 @@ GameObject:
   - component: {fileID: 1241156948}
   - component: {fileID: 1241156947}
   m_Layer: 0
-  m_Name: Good Karma (3)
+  m_Name: Karma Slot (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1858,7 +1860,7 @@ GameObject:
   - component: {fileID: 1300729100}
   - component: {fileID: 1300729099}
   m_Layer: 0
-  m_Name: Bad Karma
+  m_Name: Karma Slot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2475,7 +2477,7 @@ GameObject:
   - component: {fileID: 1720131997}
   - component: {fileID: 1720131996}
   m_Layer: 0
-  m_Name: Good Karma (2)
+  m_Name: Karma Slot (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2549,7 +2551,7 @@ GameObject:
   - component: {fileID: 1782728886}
   - component: {fileID: 1782728885}
   m_Layer: 0
-  m_Name: Good Karma
+  m_Name: Karma Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

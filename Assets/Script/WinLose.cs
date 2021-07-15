@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class WinLose : MonoBehaviour
 {
     GameLogic GL;
-    public Karma karma;
+    public KarmaUI karma;
 
     // Win
     public Card healthWin;
@@ -77,13 +77,12 @@ public class WinLose : MonoBehaviour
 
     void Lose()
     {
-        if (GameLogic.iskarmaGood) // Karma Good Impact
+        if (GameLogic.good_karma > 0) // Karma Good Impact
         {
             GameLogic.Health += 0.5f;
             GameLogic.Mental += 0.5f;
             GameLogic.Money += 0.5f;
-            GameLogic.iskarmaGood = false;
-            karma.Impact();
+            GameLogic.good_karma--; // Remove Icon here
         }
         else
         {

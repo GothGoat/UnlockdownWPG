@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Karma : MonoBehaviour
+public class KarmaUI : MonoBehaviour
 {
     GameLogic GL;
     public static float badDebuff;
+    public float gKarma_UI;
+    public float bKarma_UI;
 
     private void Awake()
     {
@@ -17,7 +19,31 @@ public class Karma : MonoBehaviour
         badDebuff = -20f;
     }
 
-    public void Impact()
+    public void Update()
+    {
+        if (gKarma_UI < GameLogic.good_karma)
+        {
+            // Make Icon Appear Here
+            gKarma_UI++;
+        }
+        else if (gKarma_UI > GameLogic.good_karma)
+        {
+            // Make Icon disappear
+            gKarma_UI--;
+        }
+
+        if (bKarma_UI < GameLogic.good_karma)
+        {
+            // Make Icon Appear Here
+            bKarma_UI++;
+        }
+        else if (bKarma_UI > GameLogic.good_karma)
+        {
+            // Make Icon disappear
+            bKarma_UI--;
+        }
+    }
+    /* public void Impact()
     {
         if (GameLogic.iskarmaGood)
             GL.Good.sprite = Resources.Load<Sprite>("Sprites/Good");
@@ -29,4 +55,5 @@ public class Karma : MonoBehaviour
         else if (!GameLogic.iskarmaBad)
             GL.Bad.sprite = Resources.Load<Sprite>("Sprites/Default");
     }
+    */
 }

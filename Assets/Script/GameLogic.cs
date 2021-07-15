@@ -12,7 +12,7 @@ public class GameLogic : MonoBehaviour
     public SpriteRenderer CardSpriteRenderer;
     public ResourceManager resourceManager;
     public CardLogic cl;
-    public Karma karma;
+    public KarmaUI karma;
 
     // Card Movement
     public float fMovingSpeed = 3f;
@@ -34,8 +34,9 @@ public class GameLogic : MonoBehaviour
     public int month_count = 1;
     
     // Karma System
-    public static bool iskarmaGood;
-    public static bool iskarmaBad;
+    public static float good_karma;
+    public static float bad_karma;
+    public static float total_karma;
     public Image Good;
     public Image Bad;
 
@@ -61,8 +62,6 @@ public class GameLogic : MonoBehaviour
     {
         WinLose.GameOver = false;
         deck_length = resourceManager.cards.Length - 1;
-        iskarmaBad = false;
-        iskarmaGood = false;
         NewCard();
         Month.text = "0 M";
         Money = 1f;
@@ -85,7 +84,6 @@ public class GameLogic : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 currentCard.Left();
-                karma.Impact();
                 if (!WinLose.GameOver)
                 {
                     NewCard();
@@ -105,7 +103,6 @@ public class GameLogic : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 currentCard.Right();
-                karma.Impact();
 
                 if (!WinLose.GameOver)
                 {
