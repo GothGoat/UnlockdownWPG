@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feba115ee37b4464fb167d0de6bb8724, type: 3}
+  m_Name: Lose_Mental
+  m_EditorClassIdentifier: 
+  CardName: ONE
+  sprite: {fileID: 21300000, guid: 22e270d8fb6ed144fa50521bd55e5a12, type: 3}
+  cardDialogue: Pikiranmu kacau dan mulai bicara melantur. Ibumu yang khawatir membawamu
+    ke rumah sakit jiwa. Dokter yang memeriksamu mengharuskan kamu agar direhabilitasi
+    mental
+  leftDialogue: Back to Main Menu
+  RightDialogue: Play Again
+  karma: 0
+  mental_left: 0
+  health_left: 0
+  money_left: 0
+  mental_right: 0
+  health_right: 0
+  money_right: 0

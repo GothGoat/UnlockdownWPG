@@ -12,11 +12,12 @@ public class GameLogic : MonoBehaviour
     public SpriteRenderer CardSpriteRenderer;
     public ResourceManager resourceManager;
     public CardLogic cl;
-    public KarmaUI karma;
+    public Karma karma;
 
     // Card Movement
     public float fMovingSpeed = 3f;
     public float fsidemargin;
+    public float startPosX;
 
     // UI
     public TMP_Text carddialoguetext;
@@ -33,9 +34,8 @@ public class GameLogic : MonoBehaviour
     public int month_count = 1;
     
     // Karma System
-    public static float good_karma;
-    public static float bad_karma;
-    public static float total_karma;
+    public static bool iskarmaGood;
+    public static bool iskarmaBad;
     public Image Good;
     public Image Bad;
 
@@ -54,13 +54,21 @@ public class GameLogic : MonoBehaviour
     public float maxValue = 1f;
     public float minValue = 0f;
 
+    // Audio
     public AudioSource bgm;
     public AudioSource lose;
     public AudioSource win;
+
+    // Timer
+    public Timer Timer;
+    public GameObject timerUI;
+
     void Start()
     {
         WinLose.GameOver = false;
         deck_length = resourceManager.cards.Length - 1;
+        iskarmaBad = false;
+        iskarmaGood = false;
         NewCard();
         Month.text = "0 M";
         Money = 1f;
@@ -83,6 +91,7 @@ public class GameLogic : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 currentCard.Left();
+                karma.Impact();
                 if (!WinLose.GameOver)
                 {
                     NewCard();
@@ -102,6 +111,7 @@ public class GameLogic : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 currentCard.Right();
+                karma.Impact();
 
                 if (!WinLose.GameOver)
                 {
@@ -121,11 +131,16 @@ public class GameLogic : MonoBehaviour
         }
 
         //Moving
-        if (Input.GetMouseButton(0) && cl.isMouseOver)
+        if (cl.isMouseOver)
         {
-            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            pos.y = 0f;
-            card.transform.position = pos;
+            Vector2 mousePos;
+            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            card.gameObject.transform.localPosition = new Vector2(mousePos.x - startPosX, 0);
+            // Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - card.transform.position;
+            // pos.y = 0f;
+            // card.transform.Translate(pos); 
+            // card.transform.position = pos;
         }
         else if (!isFliping)
         {
@@ -172,6 +187,9 @@ public class GameLogic : MonoBehaviour
         {
             bgm.Stop();
         }
+
+        // Activate Time
+        timeActivate();
     }
 
     public void LoadCard(Card ncard)
@@ -209,5 +227,28 @@ public class GameLogic : MonoBehaviour
             resourceManager.cards[i] = resourceManager.cards[i + 1];
         }
         deck_length--;
+        Debug.Log("Health = " + Health);
+        Debug.Log("Mental = " + Mental);
+        Debug.Log("Money = " + Money);
+
+        // Timer reset
+        if(Timer.currentTime < Timer.startingTime)
+        {
+            Timer.currentTime =Timer.startingTime;
+        }
+    }
+
+    public void timeActivate()
+    {
+        if (currentCard.timer)
+        {
+            timerUI.SetActive(true);
+            Timer.enabled = true;
+        }
+        else
+        {
+            timerUI.SetActive(false);
+            Timer.enabled = false;
+        }
     }
 }

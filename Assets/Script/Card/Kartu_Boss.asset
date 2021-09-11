@@ -19,6 +19,7 @@ MonoBehaviour:
   leftDialogue: '*Diemin aja ah, lanjut tidur lagi*'
   RightDialogue: Baik Bos, saya akan segera ke sana
   karma: 0
+  timer: 1
   mental_left: -10
   health_left: 10
   money_left: -20

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feba115ee37b4464fb167d0de6bb8724, type: 3}
+  m_Name: Win_Mental
+  m_EditorClassIdentifier: 
+  CardName: ONE
+  sprite: {fileID: 21300000, guid: 25cdb8bc70e6105448ad94e70c77c1d3, type: 3}
+  cardDialogue: Lockdown menyebabkan kesehatan mental orang-orang terganggu, tapi
+    tidak denganmu. Kamu memiliki mental yang sangat sehat dan stabil di antara orang-orang
+    itu
+  leftDialogue: Back To Main Menu
+  RightDialogue: Play Again
+  karma: 0
+  mental_left: 0
+  health_left: 0
+  money_left: 0
+  mental_right: 0
+  health_right: 0
+  money_right: 0

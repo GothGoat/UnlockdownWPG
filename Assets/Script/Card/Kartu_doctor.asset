@@ -19,6 +19,7 @@ MonoBehaviour:
   leftDialogue: Enggak kok Dok, ini cuma kurang makan aja
   RightDialogue: Baik Dokter, terimakasih sarannya
   karma: 0
+  timer: 1
   mental_left: 0
   health_left: -10
   money_left: 0

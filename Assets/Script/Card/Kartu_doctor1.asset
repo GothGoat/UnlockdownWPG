@@ -19,6 +19,7 @@ MonoBehaviour:
   leftDialogue: Tak apa Doc, sebentar lagi juga sembuh
   RightDialogue: Baik Doc, aku menuju ke sana
   karma: 0
+  timer: 1
   mental_left: 0
   health_left: -20
   money_left: 0
