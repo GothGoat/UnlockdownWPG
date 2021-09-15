@@ -19,6 +19,7 @@ MonoBehaviour:
   leftDialogue: Yahh, kk juga lagi butuh banget nihh, maaf yaa
   RightDialogue: Aku cuma bisa ngasih segini gak papa yaa
   karma: 1
+  timer: 1
   mental_left: -10
   health_left: 0
   money_left: 0

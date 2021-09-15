@@ -19,6 +19,7 @@ MonoBehaviour:
   leftDialogue: Maaf Tante, aku lagi banyak kerjaan jadi gak bisa ke sana
   RightDialogue: Oke Tante, aku menuju ke sana
   karma: 1
+  timer: 1
   mental_left: -10
   health_left: 0
   money_left: 0

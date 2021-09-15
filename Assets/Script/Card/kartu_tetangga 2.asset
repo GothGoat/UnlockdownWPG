@@ -19,6 +19,7 @@ MonoBehaviour:
   leftDialogue: Yahh, lagi mager banget nihh. Sori ya
   RightDialogue: Sip sip, gua minta honor yakk hehe
   karma: 1
+  timer: 1
   mental_left: -10
   health_left: 0
   money_left: 0

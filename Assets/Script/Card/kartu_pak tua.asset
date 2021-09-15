@@ -19,6 +19,7 @@ MonoBehaviour:
   leftDialogue: '*Pura pura gak liat aja ahh*'
   RightDialogue: Ini Kek, maaf aku cuma bisa ngasih segini
   karma: 1
+  timer: 1
   mental_left: -20
   health_left: 0
   money_left: 0
