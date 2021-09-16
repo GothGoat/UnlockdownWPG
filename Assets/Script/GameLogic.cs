@@ -63,6 +63,9 @@ public class GameLogic : MonoBehaviour
     public Timer Timer;
     public GameObject timerUI;
 
+    // Loading Screen
+    public GameObject loadingScreen;
+
     void Start()
     {
         WinLose.GameOver = false;
@@ -99,7 +102,8 @@ public class GameLogic : MonoBehaviour
                 }
                 else
                 {
-                    SceneManager.LoadScene(0);
+                    StartCoroutine(LoadAsynchronously(0));
+                    // SceneManager.LoadScene(0);
                 }
             }
         }
@@ -249,6 +253,22 @@ public class GameLogic : MonoBehaviour
         {
             timerUI.SetActive(false);
             Timer.enabled = false;
+        }
+    }
+
+    // Loading Screen
+    IEnumerator LoadAsynchronously(int sceneIndex)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+
+        loadingScreen.SetActive(true);
+
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / .9f);
+            Debug.Log(progress);
+
+            yield return null;
         }
     }
 }

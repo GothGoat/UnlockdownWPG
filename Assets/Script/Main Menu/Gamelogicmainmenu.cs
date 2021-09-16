@@ -19,6 +19,9 @@ public class Gamelogicmainmenu : MonoBehaviour
     public string leftText;
     public string rightText;
 
+    // Loading Screen
+    public GameObject loadingScreen;
+
     public void Update()
     {
         if (card.transform.position.x > 0.5)    // Kanan
@@ -28,7 +31,8 @@ public class Gamelogicmainmenu : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 Debug.Log("code berhasil");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                StartCoroutine(LoadAsynchronously(SceneManager.GetActiveScene().buildIndex + 1));
+                // SceneManager.GetActiveScene().buildIndex + 1
             }
         }
         else if (card.transform.position.x < -0.5) // Kiri
@@ -89,6 +93,21 @@ public class Gamelogicmainmenu : MonoBehaviour
     private void OnMouseUp()
     {
         isMouseOver = false;
+    }
+
+    IEnumerator LoadAsynchronously (int sceneIndex)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+
+        loadingScreen.SetActive(true);
+
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / .9f);
+            Debug.Log(progress);
+
+            yield return null;
+        }
     }
 }
 
