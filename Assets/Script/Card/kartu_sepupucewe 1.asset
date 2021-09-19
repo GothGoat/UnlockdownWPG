@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: Sepupu Cewek
   sprite: {fileID: 21300000, guid: b7b6f413308c256438f6bc8660f47c1a, type: 3}
-  cardDialogue: "Kk Char, ajarin ngelukis dong! Aku dah beli alat-alatnya nih, biar
-    ga bosen lckdwn mulu. Yuk ngelukis bareng\u2026  "
+  cardDialogue: "Kk $playername, ajarin ngelukis dong! Aku dah beli alat-alatnya
+    nih, biar ga bosen lckdwn mulu. Yuk ngelukis bareng\u2026  "
   leftDialogue: Aku lagi banyak kerjaan nih Dek, liat yutub dulu yaa
   RightDialogue: Boleh, nanti aku ke situ yaa
   karma: 0
+  timer: 0
   mental_left: -10
   health_left: 0
   money_left: 0

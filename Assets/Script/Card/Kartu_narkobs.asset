@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: Bandar Narkoba
   sprite: {fileID: 21300000, guid: c2c7a51fd4fdc7a4ab673ad305a9df56, type: 3}
-  cardDialogue: Daripada ke dokter, mendng beli obat di tmnku. Dijamin langsung sembuh,
-    Les. Walaupun ilegal, efeknya gilasi, mantps!
+  cardDialogue: Daripada ke dokter, mendng beli obat di tmnku. Dijamin langsung sembuh.
+    Walaupun ilegal, efeknya gilasi, mantps!
   leftDialogue: Gak ah, tak laporin polisi nih
   RightDialogue: Wah, boleh juga tuu
   karma: 0
+  timer: 0
   mental_left: 0
   health_left: 0
   money_left: 0

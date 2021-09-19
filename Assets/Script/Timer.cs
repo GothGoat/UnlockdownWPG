@@ -32,6 +32,12 @@ public class Timer : MonoBehaviour
             karma.Impact();
             GameLogic.NewCard();
             GameLogic.Month.text = GameLogic.month_count++ + " M";
+            if (GameLogic.iskarmaGood)
+            {
+                GameLogic.Health += Karma.badDebuff / 100f;
+                GameLogic.Mental += Karma.badDebuff / 100f;
+                GameLogic.Money += Karma.badDebuff / 100f;
+            }
         }
     }
 }

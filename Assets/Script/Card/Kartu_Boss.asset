@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: Boss
   sprite: {fileID: 21300000, guid: f6163443441ec744b92caa9903b262f8, type: 3}
-  cardDialogue: 'Selamat pagi, Charles. Apakah hari ini bisa pergi dan bekerja ke
-    kantor? Kami sedang membutuhkan dirimu. Terimakasih '
+  cardDialogue: 'Selamat pagi, $playername. Apakah hari ini bisa pergi dan bekerja
+    ke kantor? Kami sedang membutuhkan dirimu. Terimakasih '
   leftDialogue: '*Diemin aja ah, lanjut tidur lagi*'
   RightDialogue: Baik Bos, saya akan segera ke sana
   karma: 0

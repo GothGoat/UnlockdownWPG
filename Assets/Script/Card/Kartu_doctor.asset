@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: Dokter
   sprite: {fileID: 21300000, guid: 04a61f5da27a90642b266be8ac627c10, type: 3}
-  cardDialogue: 'Charles, melihat kondisi tubuhmu yg kurang olahraga, sy sarankan
+  cardDialogue: '$playername, melihat kondisi tubuhmu yg kurang olahraga, sy sarankan
     pergilah ke fitness/gym di dkt situ untuk melatih kebugaranmu. '
   leftDialogue: Enggak kok Dok, ini cuma kurang makan aja
   RightDialogue: Baik Dokter, terimakasih sarannya

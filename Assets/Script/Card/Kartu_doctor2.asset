@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: Dokter vitamin
   sprite: {fileID: 21300000, guid: 04a61f5da27a90642b266be8ac627c10, type: 3}
-  cardDialogue: Charles, jangan lupa jaga kesehatanmu. Sudah beli vitamin yang sy
-    suruh kmrn? Kalo sudah jg lupa diminum 3x sehari.
+  cardDialogue: $playername, jangan lupa jaga kesehatanmu. Sudah beli vitamin yang
+    sy suruh kmrn? Kalo sudah jg lupa diminum 3x sehari.
   leftDialogue: Gak usah Doc, ini udah enakan kok
   RightDialogue: Baik Doc, ini aku sedang memesan vitaminnya
   karma: 0
+  timer: 0
   mental_left: 0
   health_left: -20
   money_left: 0

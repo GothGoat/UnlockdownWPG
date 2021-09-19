@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using TMPro;
 
 public class Gamelogicmainmenu : MonoBehaviour
@@ -22,6 +23,11 @@ public class Gamelogicmainmenu : MonoBehaviour
     // Loading Screen
     public GameObject loadingScreen;
 
+    // Name Input
+    public GameObject inputField;
+    public GameObject warningText;
+    public GameObject nameField;
+
     public void Update()
     {
         if (card.transform.position.x > 0.5)    // Kanan
@@ -30,9 +36,18 @@ public class Gamelogicmainmenu : MonoBehaviour
             Text.alpha = Mathf.Min(card.transform.position.x, 1);
             if (Input.GetMouseButtonUp(0))
             {
-                Debug.Log("code berhasil");
-                StartCoroutine(LoadAsynchronously(SceneManager.GetActiveScene().buildIndex + 1));
-                // SceneManager.GetActiveScene().buildIndex + 1
+                StoreName();
+                if (Name.charName == "")
+                {
+                    warningText.SetActive(true);
+                }
+                else
+                {
+                    nameField.SetActive(false);
+                    Debug.Log("code berhasil");
+                    StartCoroutine(LoadAsynchronously(SceneManager.GetActiveScene().buildIndex + 1));
+                    // SceneManager.GetActiveScene().buildIndex + 1
+                }
             }
         }
         else if (card.transform.position.x < -0.5) // Kiri
@@ -109,6 +124,12 @@ public class Gamelogicmainmenu : MonoBehaviour
             yield return null;
         }
     }
+
+    public void StoreName()
+    {
+        Name.charName = inputField.GetComponent<Text>().text;
+    }
+
 }
 
 

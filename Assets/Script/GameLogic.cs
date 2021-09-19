@@ -208,7 +208,7 @@ public class GameLogic : MonoBehaviour
             CardSpriteRenderer.sprite = ncard.sprite;
             leftdialogue = ncard.leftDialogue;
             rightdialogue = ncard.RightDialogue;
-            carddialoguetext.text = ncard.cardDialogue;
+            carddialoguetext.text = ncard.cardDialogue.Replace("$playername", Name.charName);
 
             // Reset card position
             card.transform.position = new Vector2(0, 0);
@@ -238,7 +238,7 @@ public class GameLogic : MonoBehaviour
         // Timer reset
         if(Timer.currentTime < Timer.startingTime)
         {
-            Timer.currentTime =Timer.startingTime;
+            Timer.currentTime = Timer.startingTime;
         }
     }
 

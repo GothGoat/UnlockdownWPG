@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: Sepupu Cewek
   sprite: {fileID: 21300000, guid: b7b6f413308c256438f6bc8660f47c1a, type: 3}
-  cardDialogue: Kk Char, kasih adik sepupumu ini uang dong. Please lagi butuh uang
-    bgt.
+  cardDialogue: Kk $playername, kasih adik sepupumu ini uang dong. Please lagi butuh
+    uang bgt.
   leftDialogue: Yahh, kk juga lagi butuh banget nihh, maaf yaa
   RightDialogue: Aku cuma bisa ngasih segini gak papa yaa
   karma: 1

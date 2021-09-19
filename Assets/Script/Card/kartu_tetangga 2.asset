@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: 'Tetangga '
   sprite: {fileID: 21300000, guid: e630a8830df394b40833040e5f9f45db, type: 3}
-  cardDialogue: 'Woi Les, lu di rumah? Besok kan ada acara nih di rumah gw, tolong
-    bantu angkat-angkat dong hehe, makasi. '
+  cardDialogue: 'Woi $playername, lu di rumah? Besok kan ada acara nih di rumah gw,
+    tolong bantu angkat-angkat dong hehe, makasi. '
   leftDialogue: Yahh, lagi mager banget nihh. Sori ya
   RightDialogue: Sip sip, gua minta honor yakk hehe
   karma: 1

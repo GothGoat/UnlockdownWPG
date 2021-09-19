@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: Teman1 Jajan
   sprite: {fileID: 21300000, guid: f9d36c39c58f8ea4d90260091b2d2261, type: 3}
-  cardDialogue: 'Charles, ikutan gw beli jajan yuk! '
+  cardDialogue: '$playername, ikutan gw beli jajan yuk! '
   leftDialogue: Gak ada duit nih Bro
   RightDialogue: Ayok dah
   karma: 0
+  timer: 0
   mental_left: -10
   health_left: 0
   money_left: 0

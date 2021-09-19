@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: Ibu
   sprite: {fileID: 21300000, guid: 82518671110871a4ea20ba57c36174f6, type: 3}
-  cardDialogue: Charles, bsk temani mama senam komplek y. Nnt mama kasi uang jajan
-    deh
+  cardDialogue: $playername, bsk temani mama senam komplek y. Nnt mama kasi uang
+    jajan deh
   leftDialogue: Waduu, capek Ma
   RightDialogue: Asiikk, oke Ma
   karma: 1

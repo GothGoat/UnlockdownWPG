@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: Teman1
   sprite: {fileID: 21300000, guid: f9d36c39c58f8ea4d90260091b2d2261, type: 3}
-  cardDialogue: 'Nanti malem gausa tdr, Les. Ikutan kita begadang sambil ngobrol
-    di zum yuk! '
+  cardDialogue: 'Nanti malem gausa tdr, $playername. Ikutan kita begadang sambil
+    ngobrol di zum yuk! '
   leftDialogue: Gak bisa Bro, besok masih banyak kerjaan
   RightDialogue: Gas lahh, udah lama gak ngobrol kita
   karma: 0
+  timer: 0
   mental_left: -10
   health_left: 10
   money_left: 0

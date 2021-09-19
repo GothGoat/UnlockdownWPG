@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: Preman
   sprite: {fileID: 21300000, guid: 77a4bf47cf40930459d1a8e47cab69f7, type: 3}
-  cardDialogue: 'Hei, Charles ap kau sdg kesulitan ttg uang? Aku barusan dpt kerjaan
-    mencuri slh satu bank. Ikutlah dg ku, ku jamin hasilnya bkn main-main. '
+  cardDialogue: 'Hei, $playername ap kau sdg kesulitan ttg uang? Aku barusan dpt
+    kerjaan mencuri slh satu bank. Ikutlah dg ku, ku jamin hasilnya bkn main-main. '
   leftDialogue: Lah, kerjain sendiri lah, enak aja ngajak-ngajak mencuri
   RightDialogue: Wah, lumayan buat tambahan uang jajan nii
   karma: 0
+  timer: 0
   mental_left: 10
   health_left: 0
   money_left: 0

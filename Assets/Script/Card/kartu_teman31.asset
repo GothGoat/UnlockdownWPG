@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: Teman3 kerkel
   sprite: {fileID: 21300000, guid: 917f1109a1634ae4c9df0d8161753902, type: 3}
-  cardDialogue: "Woi, Charles dh dpt tugas Pak Jon, blm? Kerjain brg anak\u201D yuk
-    di tmpt biasa, sekalian nongkrong wkwk."
+  cardDialogue: "Woi, $playername dh dpt tugas Pak Jon, blm? Kerjain brg anak\u201D
+    yuk di tmpt biasa, sekalian nongkrong wkwk."
   leftDialogue: Lagi ada COVID nii, kerjain sendiri-sendiri aja lahh
   RightDialogue: Ayokk
   karma: 0
+  timer: 0
   mental_left: -20
   health_left: 0
   money_left: 0

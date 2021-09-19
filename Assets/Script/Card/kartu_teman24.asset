@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: Teman2_demo
   sprite: {fileID: 21300000, guid: 2115a30582ba9cd4c8ea13b80c5603bd, type: 3}
-  cardDialogue: "Charles! Bioskopnya dah buka nih, gas ga? Hehehe\u2026"
+  cardDialogue: "$playername! Bioskopnya dah buka nih, gas ga? Hehehe\u2026"
   leftDialogue: Waduhh, Enggak ikut dulu deh
   RightDialogue: Gass, mau jam berapa nihh?
   karma: 0
+  timer: 0
   mental_left: -10
   health_left: 0
   money_left: 0
