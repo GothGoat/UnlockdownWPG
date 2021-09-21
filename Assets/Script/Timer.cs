@@ -28,16 +28,16 @@ public class Timer : MonoBehaviour
         slider.value = currentTime;
         if (currentTime <= 0)
         {
-            GameLogic.iskarmaBad = true;
-            karma.Impact();
-            GameLogic.NewCard();
-            GameLogic.Month.text = GameLogic.month_count++ + " M";
-            if (GameLogic.iskarmaGood)
+            if (GameLogic.iskarmaBad)
             {
                 GameLogic.Health += Karma.badDebuff / 100f;
                 GameLogic.Mental += Karma.badDebuff / 100f;
                 GameLogic.Money += Karma.badDebuff / 100f;
             }
+            GameLogic.iskarmaBad = true;
+            karma.Impact();
+            GameLogic.NewCard();
+            GameLogic.Month.text = GameLogic.month_count++ + " M";
         }
     }
 }
