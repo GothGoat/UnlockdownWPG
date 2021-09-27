@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feba115ee37b4464fb167d0de6bb8724, type: 3}
+  m_Name: kartu_ibuk2
+  m_EditorClassIdentifier: 
+  CardName: Ibu
+  sprite: {fileID: 21300000, guid: 82518671110871a4ea20ba57c36174f6, type: 3}
+  cardDialogue: '$playername, msimnya sedang tdak enak. Lebih baik banyak minum jahe
+    anget ya di rmh. '
+  leftDialogue: Aduh jahe ga enak ma, aku gasuka
+  RightDialogue: Oke, ma ini lagi mau buat hehe
+  karma: 0
+  timer: 0
+  mental_left: -10
+  health_left: -20
+  money_left: 0
+  mental_right: 0
+  health_right: 0
+  money_right: -10

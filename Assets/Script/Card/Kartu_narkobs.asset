@@ -16,7 +16,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: c2c7a51fd4fdc7a4ab673ad305a9df56, type: 3}
   cardDialogue: Daripada ke dokter, mendng beli obat di tmnku. Dijamin langsung sembuh.
     Walaupun ilegal, efeknya gilasi, mantps!
-  leftDialogue: Gak ah, tak laporin polisi nih
+  leftDialogue: (Telepon Polisi) Halo Polisi?
   RightDialogue: Wah, boleh juga tuu
   karma: 0
   timer: 0
