@@ -221,7 +221,7 @@ public class GameLogic : MonoBehaviour
 
     public void NewCard()
     {
-        int acak = Random.Range(0, deck_length);
+        int acak = Random.Range(0, deck_length-1);
         int nilai_acak = acak;
         LoadCard(resourceManager.cards[nilai_acak]);
         
